@@ -86,9 +86,9 @@ export default function CockpitDashboard() {
               <p className="text-sm text-white/80 mb-6 flex-1">
                 Member since {formatDate(currentMember.memberSince)}. Your PI Insurance is current via the APIV scheme.
               </p>
-              <Link href="/education/cpv" className="inline-flex items-center gap-2 text-sm font-medium text-accent-400 hover:text-accent-500">
-                View your CPD requirements →
-              </Link>
+              <a href="https://felix.api.org.au/products/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-sm font-medium text-accent-400 hover:text-accent-500">
+                Browse CPD courses & events →
+              </a>
             </CardContent>
           </Card>
         </motion.div>
