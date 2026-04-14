@@ -68,6 +68,25 @@ export default function AboutPage() {
           </div>
         </motion.section>
 
+        {/* Link to Committees */}
+        <motion.section variants={fadeUp}>
+          <Card className="bg-brand-500 text-white border-0">
+            <CardContent className="p-8 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+              <div>
+                <h3 className="text-2xl font-bold mb-2">Our Committees</h3>
+                <p className="text-white/80">
+                  Working with industry professionals to help shape the future.
+                </p>
+              </div>
+              <Button asChild variant="accent" size="lg">
+                <Link href="/about/our-committees" className="no-underline hover:no-underline">
+                  View committees <ArrowRight className="w-4 h-4" />
+                </Link>
+              </Button>
+            </CardContent>
+          </Card>
+        </motion.section>
+
         {/* Vision */}
         <motion.section variants={fadeUp}>
           <h2 className="text-[2rem] font-bold text-brand-500 tracking-[-0.02em] mb-4">Vision</h2>
@@ -126,24 +145,6 @@ export default function AboutPage() {
           </div>
         </motion.section>
 
-        {/* Link to Committees */}
-        <motion.section variants={fadeUp}>
-          <Card className="bg-brand-500 text-white border-0">
-            <CardContent className="p-8 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-              <div>
-                <h3 className="text-2xl font-bold mb-2">Our Committees</h3>
-                <p className="text-white/80">
-                  Working with industry professionals to help shape the future.
-                </p>
-              </div>
-              <Button asChild variant="accent" size="lg">
-                <Link href="/about/our-committees" className="no-underline hover:no-underline">
-                  View committees <ArrowRight className="w-4 h-4" />
-                </Link>
-              </Button>
-            </CardContent>
-          </Card>
-        </motion.section>
       </motion.div>
     </PageShell>
   );
