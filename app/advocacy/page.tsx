@@ -85,7 +85,7 @@ export default function AdvocacyPage() {
               const Icon = categoryIcons[i.category];
               return (
                 <motion.div key={i.id} variants={fadeUp}>
-                  <Card className="h-full transition-all duration-200 hover:border-action-500 cursor-pointer">
+                  <Card className="h-full transition-all duration-200 hover:border-brand-500 cursor-pointer">
                     <CardContent className="p-6">
                       <div className="w-10 h-10 rounded-lg bg-brand-50 text-brand-500 grid place-items-center mb-4">
                         <Icon className="w-5 h-5" />

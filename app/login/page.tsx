@@ -105,11 +105,11 @@ export default function LoginPage() {
                 </div>
 
                 <Button variant="outline" size="lg" className="w-full" onClick={startBiometric}>
-                  <Fingerprint className="w-5 h-5 text-action-500" /> Use biometric (passkey)
+                  <Fingerprint className="w-5 h-5 text-brand-500" /> Use biometric (passkey)
                 </Button>
 
                 <p className="mt-8 text-center text-sm text-[color:var(--color-muted)]">
-                  New to API? <Link href="#" className="text-action-500 font-medium hover:underline">Become a member</Link>
+                  New to API? <Link href="#" className="text-brand-500 font-medium hover:underline">Become a member</Link>
                 </p>
               </motion.div>
             )}

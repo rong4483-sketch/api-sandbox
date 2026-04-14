@@ -16,7 +16,7 @@ export function ProfessionalCard({ p }: { p: Professional }) {
       exit={{ opacity: 0 }}
       transition={{ duration: 0.2 }}
     >
-      <Card className="h-full transition-all duration-200 hover:border-action-500">
+      <Card className="h-full transition-all duration-200 hover:border-brand-300">
         <CardContent className="p-5">
           <div className="flex items-start gap-3 mb-4">
             <div className="w-12 h-12 rounded-full bg-brand-500 text-white grid place-items-center font-semibold text-sm shrink-0">

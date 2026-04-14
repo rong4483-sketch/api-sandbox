@@ -15,6 +15,7 @@ export const pillars = [
   { label: "Standards", href: "/standards" },
   { label: "Advocacy", href: "/advocacy" },
   { label: "Directory", href: "/directory" },
+  { label: "About", href: "/about" },
 ];
 
 export function TopNav() {
@@ -64,7 +65,7 @@ export function TopNav() {
               </Link>
             </Button>
           )}
-          <Button asChild size="sm" className="bg-action-500 hover:bg-action-600 text-white">
+          <Button asChild size="sm" variant="accent">
             <Link href="/directory" className="no-underline hover:no-underline">Find a professional</Link>
           </Button>
         </div>
@@ -101,7 +102,7 @@ export function TopNav() {
                 <Button asChild size="sm" variant="outline" className="flex-1 bg-white/10 border-white/30 text-white hover:bg-white/20">
                   <Link href="/login" className="no-underline hover:no-underline">Member login</Link>
                 </Button>
-                <Button asChild size="sm" className="flex-1 bg-action-500 hover:bg-action-600 text-white">
+                <Button asChild size="sm" variant="accent" className="flex-1">
                   <Link href="/directory" className="no-underline hover:no-underline">Find a pro</Link>
                 </Button>
               </div>

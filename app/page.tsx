@@ -87,7 +87,7 @@ export default function HomePage() {
               could look like in 2026 — built around member utility, not organisational silos.
             </motion.p>
             <motion.div variants={fadeUp} className="mt-10 flex flex-wrap gap-3">
-              <Button asChild size="lg" className="bg-action-500 hover:bg-action-600 text-white">
+              <Button asChild size="lg">
                 <Link href="/login" className="no-underline hover:no-underline">Sign in as demo member <ArrowRight className="w-4 h-4" /></Link>
               </Button>
               <Button asChild size="lg" variant="outline" className="bg-white/10 border-white/30 text-white hover:bg-white/20">
@@ -101,7 +101,7 @@ export default function HomePage() {
       {/* PILLAR GRID — 6rem section padding, cards with image containers */}
       <section className="mx-auto max-w-7xl px-6 py-24">
         <div className="mb-12 max-w-2xl">
-          <div className="text-xs font-bold uppercase tracking-[0.2em] text-action-500 mb-3">The Pillar Model</div>
+          <div className="text-xs font-bold uppercase tracking-[0.2em] text-brand-500 mb-3">The Pillar Model</div>
           <h2 className="text-[2.5rem] font-bold text-brand-500 leading-tight tracking-[-0.02em]">
             Five pillars, built around how members actually work.
           </h2>
@@ -119,7 +119,7 @@ export default function HomePage() {
             return (
               <motion.div key={p.href} variants={fadeUp}>
                 <Link href={p.href} className="group block h-full no-underline hover:no-underline">
-                  <Card className="h-full transition-all duration-200 group-hover:border-action-500 group-hover:-translate-y-0.5">
+                  <Card className="h-full transition-all duration-200 group-hover:border-brand-500 group-hover:-translate-y-0.5">
                     {/* Image container */}
                     <div className="relative h-44 overflow-hidden rounded-t-lg bg-surface">
                       <img
@@ -140,7 +140,7 @@ export default function HomePage() {
                       <p className="text-xs text-[color:var(--color-muted)] border-t border-border pt-3 mb-3">
                         <span className="font-bold text-brand-500">Fixes: </span>{p.fixes}
                       </p>
-                      <span className="inline-flex items-center gap-1 text-sm text-action-500 font-medium">
+                      <span className="inline-flex items-center gap-1 text-sm text-brand-500 font-medium">
                         Open {p.label} <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" />
                       </span>
                     </CardContent>
@@ -156,7 +156,7 @@ export default function HomePage() {
       <section className="bg-surface border-y border-border">
         <div className="mx-auto max-w-7xl px-6 py-24">
           <div className="mb-12 max-w-2xl">
-            <div className="text-xs font-bold uppercase tracking-[0.2em] text-action-500 mb-3">April 2026 Audit</div>
+            <div className="text-xs font-bold uppercase tracking-[0.2em] text-brand-500 mb-3">April 2026 Audit</div>
             <h2 className="text-[2.5rem] font-bold text-brand-500 leading-tight tracking-[-0.02em]">
               What&apos;s broken. What we&apos;ve fixed.
             </h2>

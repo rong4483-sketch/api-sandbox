@@ -13,8 +13,8 @@ interface LogoProps {
  * Drop the official SVG into /public/brand/logo.svg to replace.
  */
 export function Logo({ className, variant = "default", href = "/" }: LogoProps) {
-  const fill = variant === "mono" ? "currentColor" : "#002B49";
-  const textColor = variant === "mono" ? "currentColor" : "#002B49";
+  const fill = variant === "mono" ? "currentColor" : "#1D5F6E";
+  const textColor = variant === "mono" ? "currentColor" : "#1D5F6E";
 
   const mark = (
     <span className={cn("inline-flex items-center gap-3", className)} aria-label="Australian Property Institute">
@@ -46,7 +46,7 @@ export function Logo({ className, variant = "default", href = "/" }: LogoProps) 
 
   if (href === null) return mark;
   return (
-    <Link href={href} className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-action-500 rounded-lg no-underline hover:no-underline">
+    <Link href={href} className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 rounded-lg no-underline hover:no-underline">
       {mark}
     </Link>
   );

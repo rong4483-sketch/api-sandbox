@@ -25,7 +25,7 @@ export function QuickActions() {
               className={`group flex flex-col items-start gap-2 rounded-lg border p-4 transition-all duration-200 hover:-translate-y-0.5 no-underline hover:no-underline
                 ${a.accent
                   ? "border-accent-500/40 bg-accent-500/5 hover:border-accent-500"
-                  : "border-border bg-white hover:border-action-500"}`}
+                  : "border-border bg-white hover:border-brand-300"}`}
             >
               <div className={`w-9 h-9 rounded-lg grid place-items-center
                 ${a.accent ? "bg-accent-500 text-brand-900" : "bg-brand-50 text-brand-500 group-hover:bg-brand-500 group-hover:text-white"} transition-colors`}>
