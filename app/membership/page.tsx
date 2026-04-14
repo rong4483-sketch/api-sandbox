@@ -87,7 +87,7 @@ export default function CockpitDashboard() {
                 Member since {formatDate(currentMember.memberSince)}. Your PI Insurance is current via the APIV scheme.
               </p>
               <Link href="/education/cpv" className="inline-flex items-center gap-2 text-sm font-medium text-accent-400 hover:text-accent-500">
-                View CPV requirements →
+                View your CPD requirements →
               </Link>
             </CardContent>
           </Card>
