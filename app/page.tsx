@@ -12,16 +12,16 @@ import { Badge } from "@/components/ui/badge";
 import { staggerContainer, fadeUp } from "@/lib/motion";
 
 const pillars = [
-  { label: "The Cockpit",  href: "/cockpit",   icon: LayoutDashboard, purpose: "Personalised member admin — CPD, renewals, invoices, profile.", fixes: "Replaces the fragmented 'Hub' with a true authenticated home base." },
-  { label: "The Academy",  href: "/academy",   icon: BookOpen,       purpose: "All learning pathways — certifications, accredited courses, webinars.", fixes: "Ends the Education vs Membership menu overlap." },
-  { label: "The Vault",    href: "/vault",     icon: Library,        purpose: "Searchable valuation protocols and standards archive.",               fixes: "Surfaces 20+ years of standards in one indexed, filterable home." },
-  { label: "Advocacy Hub", href: "/advocacy",  icon: Megaphone,      purpose: "National campaigns, policy submissions, insights reports.",           fixes: "Gives profession-facing content a dedicated, discoverable home." },
-  { label: "The Directory",href: "/directory", icon: Users,          purpose: "Public 'Find a Property Professional' with modern filters.",          fixes: "Live filters, postcode/suburb lookup, plain-language expertise." },
+  { label: "Membership Portal", href: "/membership", icon: LayoutDashboard, purpose: "Personalised member admin — CPD, renewals, invoices, profile.", fixes: "Replaces the fragmented 'Hub' with a true authenticated home base." },
+  { label: "Education",         href: "/education",  icon: BookOpen,       purpose: "All learning pathways — certifications, accredited courses, webinars.", fixes: "Ends the Education vs Membership menu overlap." },
+  { label: "Standards",         href: "/standards",  icon: Library,        purpose: "Searchable valuation protocols and standards archive.",               fixes: "Surfaces 20+ years of standards in one indexed, filterable home." },
+  { label: "Advocacy Hub",      href: "/advocacy",   icon: Megaphone,      purpose: "National campaigns, policy submissions, insights reports.",           fixes: "Gives profession-facing content a dedicated, discoverable home." },
+  { label: "The Directory",     href: "/directory",  icon: Users,          purpose: "Public 'Find a Property Professional' with modern filters.",          fixes: "Live filters, postcode/suburb lookup, plain-language expertise." },
 ];
 
 const beforeAfter = [
-  { failure: "No CPV-specific CPD requirements visible on-site", fix: "/academy/cpv lists full structured + unstructured breakdown on the page itself" },
-  { failure: "No Student → Associate upgrade pathway exists",    fix: "/cockpit/upgrade multi-step wizard with eligibility, evidence, payment, confirmation" },
+  { failure: "No CPV-specific CPD requirements visible on-site", fix: "/education/cpv lists full structured + unstructured breakdown on the page itself" },
+  { failure: "No Student → Associate upgrade pathway exists",    fix: "/membership/upgrade multi-step wizard with eligibility, evidence, payment, confirmation" },
   { failure: "FaPP filters fail silently — no visual response",  fix: "/directory filters update results and count on every keystroke" },
   { failure: "Blank white screen on scroll (homepage + reports)",fix: "Framer Motion transitions replace legacy scroll animations causing GPU compositing failure" },
   { failure: "Valuation Insights buried under 'Products & Services'", fix: "Elevated as a flagship card in /advocacy with dedicated detail" },
@@ -151,11 +151,11 @@ export default function HomePage() {
           See it in action.
         </h2>
         <p className="text-lg text-ink/70 mb-8 max-w-xl mx-auto">
-          Sign in as Jane Valuer (Associate, CPV) to explore The Cockpit — or jump straight into the public Directory.
+          Sign in as Jane Valuer (Associate, CPV) to explore the Membership Portal — or jump straight into the public Directory.
         </p>
         <div className="flex flex-wrap justify-center gap-3">
           <Button asChild size="lg"><Link href="/login">Sign in</Link></Button>
-          <Button asChild size="lg" variant="outline"><Link href="/vault">Browse standards</Link></Button>
+          <Button asChild size="lg" variant="outline"><Link href="/standards">Browse standards</Link></Button>
         </div>
       </section>
     </PageShell>

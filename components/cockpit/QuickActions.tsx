@@ -6,7 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const actions = [
   { label: "Download certificate", icon: FileDown, href: "#", accent: false },
-  { label: "Upgrade membership",   icon: ArrowUpCircle, href: "/cockpit/upgrade", accent: true },
+  { label: "Upgrade membership",   icon: ArrowUpCircle, href: "/membership/upgrade", accent: true },
   { label: "Log CPD activity",     icon: Plus, href: "#", accent: false },
   { label: "Update details",       icon: User, href: "#", accent: false },
 ];

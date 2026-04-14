@@ -6,7 +6,7 @@ import { Logo } from "./Logo";
 
 export function Footer() {
   const pathname = usePathname();
-  if (pathname.startsWith("/cockpit") || pathname === "/login") return null;
+  if (pathname.startsWith("/membership") || pathname === "/login") return null;
 
   return (
     <footer className="border-t border-border bg-white mt-24">
@@ -26,20 +26,21 @@ export function Footer() {
         <div>
           <h4 className="text-sm font-semibold text-ink mb-3 font-sans">Pillars</h4>
           <ul className="space-y-2 text-sm text-ink/75">
-            <li><Link href="/cockpit" className="hover:text-brand-600">Cockpit</Link></li>
-            <li><Link href="/academy" className="hover:text-brand-600">Academy</Link></li>
-            <li><Link href="/vault" className="hover:text-brand-600">Vault</Link></li>
+            <li><Link href="/membership" className="hover:text-brand-600">Membership Portal</Link></li>
+            <li><Link href="/education" className="hover:text-brand-600">Education</Link></li>
+            <li><Link href="/standards" className="hover:text-brand-600">Standards</Link></li>
             <li><Link href="/advocacy" className="hover:text-brand-600">Advocacy</Link></li>
             <li><Link href="/directory" className="hover:text-brand-600">Directory</Link></li>
           </ul>
         </div>
 
         <div>
-          <h4 className="text-sm font-semibold text-ink mb-3 font-sans">Governance</h4>
+          <h4 className="text-sm font-semibold text-ink mb-3 font-sans">About</h4>
           <ul className="space-y-2 text-sm text-ink/75">
+            <li><Link href="/about" className="hover:text-brand-600">About API</Link></li>
+            <li><Link href="/about/our-committees" className="hover:text-brand-600">Our Committees</Link></li>
             <li><Link href="#" className="hover:text-brand-600">Privacy Policy</Link></li>
             <li><Link href="#" className="hover:text-brand-600">Whistleblower Policy</Link></li>
-            <li><Link href="#" className="hover:text-brand-600">Feedback</Link></li>
             <li><Link href="#" className="hover:text-brand-600">Contact</Link></li>
           </ul>
         </div>

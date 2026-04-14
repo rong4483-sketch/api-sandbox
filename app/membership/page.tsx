@@ -7,7 +7,7 @@ import { FileText, Receipt, Award } from "lucide-react";
 import { CpdProgress } from "@/components/cockpit/CpdProgress";
 import { RenewalAlert } from "@/components/cockpit/RenewalAlert";
 import { QuickActions } from "@/components/cockpit/QuickActions";
-import { CockpitSkeleton } from "@/components/skeletons/CockpitSkeleton";
+import { MembershipSkeleton } from "@/components/skeletons/MembershipSkeleton";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { currentMember, recentActivity } from "@/lib/mock/member";
@@ -25,7 +25,7 @@ export default function CockpitDashboard() {
     return (
       <div className="mx-auto max-w-6xl px-6 py-10">
         <div className="skeleton h-10 w-80 mb-8" />
-        <CockpitSkeleton />
+        <MembershipSkeleton />
       </div>
     );
   }
@@ -86,7 +86,7 @@ export default function CockpitDashboard() {
               <p className="text-sm text-white/80 mb-6 flex-1">
                 Member since {formatDate(currentMember.memberSince)}. Your PI Insurance is current via the APIV scheme.
               </p>
-              <Link href="/academy/cpv" className="inline-flex items-center gap-2 text-sm font-medium text-accent-400 hover:text-accent-500">
+              <Link href="/education/cpv" className="inline-flex items-center gap-2 text-sm font-medium text-accent-400 hover:text-accent-500">
                 View CPV requirements →
               </Link>
             </CardContent>

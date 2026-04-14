@@ -19,7 +19,7 @@ export default function AcademyPage() {
   return (
     <PageShell>
       <PageHeader
-        eyebrow="The Academy"
+        eyebrow="Education"
         title="Learning that counts — towards your credential, and your career."
         description="One home for every API learning pathway. Certifications, accredited degrees, and endorsed CPD — with the requirements made visible, not hidden in PDFs."
       />
@@ -57,7 +57,7 @@ export default function AcademyPage() {
 
         <div className="grid md:grid-cols-2 gap-6">
           {certifications.map((c) => (
-            <Link key={c.slug} href={`/academy/${c.slug}`} className="block group">
+            <Link key={c.slug} href={`/education/${c.slug}`} className="block group">
               <Card className="h-full transition-all group-hover:shadow-lg group-hover:border-brand-300">
                 <CardContent className="p-7">
                   <div className="flex items-start justify-between mb-4">

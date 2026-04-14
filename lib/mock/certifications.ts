@@ -53,7 +53,7 @@ export const certifications: Certification[] = [
         category: "Ongoing Professional Obligations",
         items: [
           { label: "Maintain PI Insurance via APIV scheme" },
-          { label: "Submit annual CPD declaration via Cockpit" },
+          { label: "Submit annual CPD declaration via Membership Portal" },
           { label: "Adhere to the API Code of Ethics" },
           { label: "Respond to disciplinary or audit requests within 14 days" },
         ],

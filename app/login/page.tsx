@@ -26,7 +26,7 @@ export default function LoginPage() {
     setState("biometric-scanning");
     setTimeout(() => {
       setState("success");
-      setTimeout(() => router.push("/cockpit"), 600);
+      setTimeout(() => router.push("/membership"), 600);
     }, 1800);
   };
 
@@ -127,7 +127,7 @@ export default function LoginPage() {
                 <div className="rounded-xl border-2 border-dashed border-accent-500/40 bg-accent-500/5 p-4 mb-6 text-sm text-ink/80">
                   <strong>Sandbox shortcut:</strong> magic links are simulated — click below to continue.
                 </div>
-                <Button size="lg" className="w-full" onClick={() => router.push("/cockpit")}>
+                <Button size="lg" className="w-full" onClick={() => router.push("/membership")}>
                   Continue to Cockpit
                 </Button>
                 <button onClick={() => setState("idle")} className="mt-4 text-sm text-[color:var(--color-muted)] hover:text-ink">

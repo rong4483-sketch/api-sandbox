@@ -38,7 +38,7 @@ export default function VaultPage() {
   return (
     <PageShell>
       <PageHeader
-        eyebrow="The Vault"
+        eyebrow="Standards"
         title="Every valuation protocol. Searchable."
         description="20+ years of standards, protocols, and exposure drafts — indexed, filterable, and versioned."
       />

@@ -8,10 +8,10 @@ import { currentMember } from "@/lib/mock/member";
 import { cn } from "@/lib/utils";
 
 const items = [
-  { label: "Dashboard", href: "/cockpit", icon: LayoutDashboard },
-  { label: "Upgrade", href: "/cockpit/upgrade", icon: ArrowUpCircle },
-  { label: "Academy", href: "/academy", icon: BookOpen },
-  { label: "Vault", href: "/vault", icon: Library },
+  { label: "Dashboard", href: "/membership", icon: LayoutDashboard },
+  { label: "Upgrade", href: "/membership/upgrade", icon: ArrowUpCircle },
+  { label: "Education", href: "/education", icon: BookOpen },
+  { label: "Standards", href: "/standards", icon: Library },
   { label: "Advocacy", href: "/advocacy", icon: Megaphone },
   { label: "Directory", href: "/directory", icon: Users },
 ];

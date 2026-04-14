@@ -148,8 +148,8 @@ export function UpgradeStepper() {
                 </p>
                 <Badge variant="success" className="mb-8">Application #UPG-2026-04413 submitted</Badge>
                 <div className="flex justify-center gap-3 flex-wrap">
-                  <Button asChild><Link href="/cockpit">Back to Cockpit</Link></Button>
-                  <Button asChild variant="outline"><Link href="/academy/cpv">Plan my CPV next</Link></Button>
+                  <Button asChild><Link href="/membership">Back to Dashboard</Link></Button>
+                  <Button asChild variant="outline"><Link href="/education/cpv">Plan my CPV next</Link></Button>
                 </div>
               </motion.div>
             )}

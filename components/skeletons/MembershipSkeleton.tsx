@@ -1,4 +1,4 @@
-export function CockpitSkeleton() {
+export function MembershipSkeleton() {
   return (
     <div className="space-y-6">
       <div className="skeleton h-32 w-full" />

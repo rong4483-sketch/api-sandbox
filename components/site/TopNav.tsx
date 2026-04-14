@@ -10,9 +10,9 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
 export const pillars = [
-  { label: "Cockpit", href: "/cockpit" },
-  { label: "Academy", href: "/academy" },
-  { label: "Vault", href: "/vault" },
+  { label: "Membership Portal", href: "/membership" },
+  { label: "Education", href: "/education" },
+  { label: "Standards", href: "/standards" },
   { label: "Advocacy", href: "/advocacy" },
   { label: "Directory", href: "/directory" },
 ];
@@ -22,9 +22,9 @@ export function TopNav() {
   const [open, setOpen] = useState(false);
 
   // Hide on authed cockpit layout and login — AuthedNav handles that context
-  const inCockpit = pathname.startsWith("/cockpit");
+  const inMembership = pathname.startsWith("/membership");
   const onLogin = pathname === "/login";
-  if (inCockpit || onLogin) return null;
+  if (inMembership || onLogin) return null;
 
   return (
     <header className="sticky top-0 z-40 w-full border-b border-border bg-white/85 backdrop-blur supports-[backdrop-filter]:bg-white/70">
@@ -56,7 +56,7 @@ export function TopNav() {
         </nav>
 
         <div className="hidden lg:flex items-center gap-2">
-          {!inCockpit && (
+          {!inMembership && (
             <Button asChild size="sm" variant="outline">
               <Link href="/login">
                 <LogIn className="w-4 h-4" /> Member login

@@ -19,8 +19,8 @@ export default async function CertificationPage({ params }: { params: Promise<{ 
 
   return (
     <PageShell>
-      <Link href="/academy" className="inline-flex items-center gap-1.5 text-sm text-[color:var(--color-muted)] hover:text-ink mb-6">
-        <ArrowLeft className="w-4 h-4" /> Back to Academy
+      <Link href="/education" className="inline-flex items-center gap-1.5 text-sm text-[color:var(--color-muted)] hover:text-ink mb-6">
+        <ArrowLeft className="w-4 h-4" /> Back to Education
       </Link>
 
       <div className="grid lg:grid-cols-[1fr_320px] gap-10">
@@ -103,7 +103,7 @@ export default async function CertificationPage({ params }: { params: Promise<{ 
                 <div className="flex justify-between"><span>Assessment</span><span className="font-medium text-white text-right text-xs">{cert.assessmentFormat}</span></div>
               </div>
               <Button variant="accent" className="w-full" asChild>
-                <Link href="/cockpit/upgrade">Apply now</Link>
+                <Link href="/membership/upgrade">Apply now</Link>
               </Button>
             </CardContent>
           </Card>
