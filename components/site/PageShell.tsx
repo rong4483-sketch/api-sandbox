@@ -40,7 +40,7 @@ export function PageHeader({ eyebrow, title, description, actions }: PageHeaderP
     <div className="mb-10 flex flex-col md:flex-row md:items-end md:justify-between gap-4">
       <div>
         {eyebrow && (
-          <div className="text-xs font-semibold uppercase tracking-[0.2em] text-accent-600 mb-3">
+          <div className="text-xs font-semibold uppercase tracking-[0.2em] text-accent-700 mb-3">
             {eyebrow}
           </div>
         )}

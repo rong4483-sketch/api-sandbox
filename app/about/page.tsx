@@ -40,7 +40,7 @@ export default function AboutPage() {
         description="Our journey so far."
       />
 
-      <motion.div initial="hidden" animate="show" variants={staggerContainer} className="space-y-20">
+      <motion.div initial="hidden" animate="show" variants={staggerContainer} className="space-y-16">
         {/* About Us */}
         <motion.section variants={fadeUp}>
           <div className="flex items-center gap-3 mb-6">
@@ -119,7 +119,7 @@ export default function AboutPage() {
             {timeline.map((t) => (
               <div key={t.year} className="relative">
                 <div className="absolute -left-[calc(2rem+5px)] w-3 h-3 rounded-full bg-accent-500 border-2 border-white" />
-                <div className="text-sm font-semibold text-accent-600 mb-1">{t.year}</div>
+                <div className="text-sm font-semibold text-accent-700 mb-1">{t.year}</div>
                 <p className="text-ink/80">{t.event}</p>
               </div>
             ))}

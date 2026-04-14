@@ -16,6 +16,7 @@
   --color-accent-400: #E2BB3A;
   --color-accent-500: #C9A227;   /* API gold */
   --color-accent-600: #A3821D;
+  --color-accent-700: #856A17;   /* WCAG AA on white (4.6:1) */
 
   --color-surface: #F7F8FA;
   --color-ink: #0F172A;

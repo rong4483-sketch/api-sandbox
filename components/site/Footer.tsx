@@ -26,22 +26,22 @@ export function Footer() {
         <div>
           <h4 className="text-sm font-semibold text-ink mb-3 font-sans">Pillars</h4>
           <ul className="space-y-2 text-sm text-ink/75">
-            <li><Link href="/membership" className="hover:text-brand-600">Membership Portal</Link></li>
-            <li><Link href="/education" className="hover:text-brand-600">Education</Link></li>
-            <li><Link href="/standards" className="hover:text-brand-600">Standards</Link></li>
-            <li><Link href="/advocacy" className="hover:text-brand-600">Advocacy</Link></li>
-            <li><Link href="/directory" className="hover:text-brand-600">Directory</Link></li>
+            <li><Link href="/membership" className="hover:text-brand-600 hover:underline">Membership Portal</Link></li>
+            <li><Link href="/education" className="hover:text-brand-600 hover:underline">Education</Link></li>
+            <li><Link href="/standards" className="hover:text-brand-600 hover:underline">Standards</Link></li>
+            <li><Link href="/advocacy" className="hover:text-brand-600 hover:underline">Advocacy</Link></li>
+            <li><Link href="/directory" className="hover:text-brand-600 hover:underline">Directory</Link></li>
           </ul>
         </div>
 
         <div>
           <h4 className="text-sm font-semibold text-ink mb-3 font-sans">About</h4>
           <ul className="space-y-2 text-sm text-ink/75">
-            <li><Link href="/about" className="hover:text-brand-600">About API</Link></li>
-            <li><Link href="/about/our-committees" className="hover:text-brand-600">Our Committees</Link></li>
-            <li><Link href="#" className="hover:text-brand-600">Privacy Policy</Link></li>
-            <li><Link href="#" className="hover:text-brand-600">Whistleblower Policy</Link></li>
-            <li><Link href="#" className="hover:text-brand-600">Contact</Link></li>
+            <li><Link href="/about" className="hover:text-brand-600 hover:underline">About API</Link></li>
+            <li><Link href="/about/our-committees" className="hover:text-brand-600 hover:underline">Our Committees</Link></li>
+            <li><Link href="#" className="hover:text-brand-600 hover:underline">Privacy Policy</Link></li>
+            <li><Link href="#" className="hover:text-brand-600 hover:underline">Whistleblower Policy</Link></li>
+            <li><Link href="#" className="hover:text-brand-600 hover:underline">Contact</Link></li>
           </ul>
         </div>
       </div>

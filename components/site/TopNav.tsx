@@ -38,6 +38,7 @@ export function TopNav() {
               <Link
                 key={p.href}
                 href={p.href}
+                aria-current={active ? "page" : undefined}
                 className={cn(
                   "relative px-4 py-2 rounded-lg text-sm font-medium transition-colors",
                   active ? "text-brand-600" : "text-ink/70 hover:text-ink hover:bg-surface"

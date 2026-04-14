@@ -14,7 +14,7 @@ import { formatDate } from "@/lib/utils";
 
 const ALL = "__all__";
 
-export default function VaultPage() {
+export default function StandardsPage() {
   const [query, setQuery] = useState("");
   const [sector, setSector] = useState<string>(ALL);
   const [status, setStatus] = useState<string>(ALL);

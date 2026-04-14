@@ -15,8 +15,8 @@ const pillars = [
   { label: "Membership Portal", href: "/membership", icon: LayoutDashboard, purpose: "Personalised member admin — CPD, renewals, invoices, profile.", fixes: "Replaces the fragmented 'Hub' with a true authenticated home base." },
   { label: "Education",         href: "/education",  icon: BookOpen,       purpose: "All learning pathways — certifications, accredited courses, webinars.", fixes: "Ends the Education vs Membership menu overlap." },
   { label: "Standards",         href: "/standards",  icon: Library,        purpose: "Searchable valuation protocols and standards archive.",               fixes: "Surfaces 20+ years of standards in one indexed, filterable home." },
-  { label: "Advocacy Hub",      href: "/advocacy",   icon: Megaphone,      purpose: "National campaigns, policy submissions, insights reports.",           fixes: "Gives profession-facing content a dedicated, discoverable home." },
-  { label: "The Directory",     href: "/directory",  icon: Users,          purpose: "Public 'Find a Property Professional' with modern filters.",          fixes: "Live filters, postcode/suburb lookup, plain-language expertise." },
+  { label: "Advocacy",           href: "/advocacy",   icon: Megaphone,      purpose: "National campaigns, policy submissions, insights reports.",           fixes: "Gives profession-facing content a dedicated, discoverable home." },
+  { label: "Directory",          href: "/directory",  icon: Users,          purpose: "Public 'Find a Property Professional' with modern filters.",          fixes: "Live filters, postcode/suburb lookup, plain-language expertise." },
 ];
 
 const beforeAfter = [
@@ -72,7 +72,7 @@ export default function HomePage() {
       {/* PILLAR GRID */}
       <section className="mx-auto max-w-7xl px-6 py-20">
         <div className="mb-12 max-w-2xl">
-          <div className="text-xs font-semibold uppercase tracking-[0.2em] text-accent-600 mb-3">The Pillar Model</div>
+          <div className="text-xs font-semibold uppercase tracking-[0.2em] text-accent-700 mb-3">The Pillar Model</div>
           <h2 className="text-4xl font-serif font-semibold text-ink leading-tight">
             Five pillars, built around how members actually work.
           </h2>
@@ -116,7 +116,7 @@ export default function HomePage() {
       <section className="bg-white border-y border-border">
         <div className="mx-auto max-w-7xl px-6 py-20">
           <div className="mb-12 max-w-2xl">
-            <div className="text-xs font-semibold uppercase tracking-[0.2em] text-accent-600 mb-3">April 2026 Audit</div>
+            <div className="text-xs font-semibold uppercase tracking-[0.2em] text-accent-700 mb-3">April 2026 Audit</div>
             <h2 className="text-4xl font-serif font-semibold text-ink leading-tight">
               What's broken. What we've fixed.
             </h2>

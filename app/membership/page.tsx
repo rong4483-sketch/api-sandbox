@@ -14,7 +14,7 @@ import { currentMember, recentActivity } from "@/lib/mock/member";
 import { formatDate } from "@/lib/utils";
 import { staggerContainer, fadeUp } from "@/lib/motion";
 
-export default function CockpitDashboard() {
+export default function MembershipDashboard() {
   const [loading, setLoading] = useState(true);
   useEffect(() => {
     const t = setTimeout(() => setLoading(false), 400);

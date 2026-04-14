@@ -15,7 +15,7 @@ const pathways = [
   { label: "Webinars & Masterclasses", icon: Video, desc: "CPD-endorsed live and on-demand learning — book, attend, and have hours logged automatically.", href: "#", count: "40+ per year" },
 ];
 
-export default function AcademyPage() {
+export default function EducationPage() {
   return (
     <PageShell>
       <PageHeader
@@ -51,7 +51,7 @@ export default function AcademyPage() {
 
       <section id="certifications">
         <div className="mb-8">
-          <div className="text-xs font-semibold uppercase tracking-[0.2em] text-accent-600 mb-2">Certifications</div>
+          <div className="text-xs font-semibold uppercase tracking-[0.2em] text-accent-700 mb-2">Certifications</div>
           <h2 className="text-3xl font-serif font-semibold">Professional credentials</h2>
         </div>
 

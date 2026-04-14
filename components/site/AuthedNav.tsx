@@ -51,6 +51,7 @@ export function AuthedNav() {
             <Link
               key={it.href}
               href={it.href}
+              aria-current={active ? "page" : undefined}
               className={cn(
                 "flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-colors",
                 active
