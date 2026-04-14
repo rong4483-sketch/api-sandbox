@@ -107,7 +107,7 @@ export function MemberConcierge() {
                           href={CHATBOT_URL}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-brand-500 text-white text-sm font-medium hover:bg-brand-600"
+                          className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-brand-500 text-white text-sm font-medium hover:bg-action-600"
                         >
                           Launch chatbot <ExternalLink className="w-4 h-4" />
                         </a>

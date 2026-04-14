@@ -53,7 +53,7 @@ export function UpgradeStepper() {
           <AnimatePresence mode="wait">
             {step === 1 && (
               <motion.div key="1" initial={{ opacity: 0, x: 24 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -24 }}>
-                <h2 className="text-2xl font-serif font-semibold mb-1">Eligibility check</h2>
+                <h2 className="text-2xl font-bold mb-1">Eligibility check</h2>
                 <p className="text-sm text-[color:var(--color-muted)] mb-6">Confirm you meet the Associate membership requirements.</p>
 
                 <div className="space-y-3">
@@ -81,7 +81,7 @@ export function UpgradeStepper() {
 
             {step === 2 && (
               <motion.div key="2" initial={{ opacity: 0, x: 24 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -24 }}>
-                <h2 className="text-2xl font-serif font-semibold mb-1">Upload supporting evidence</h2>
+                <h2 className="text-2xl font-bold mb-1">Upload supporting evidence</h2>
                 <p className="text-sm text-[color:var(--color-muted)] mb-6">Provide the documents to support your upgrade application.</p>
 
                 <div className="space-y-4">
@@ -94,10 +94,10 @@ export function UpgradeStepper() {
 
             {step === 3 && (
               <motion.div key="3" initial={{ opacity: 0, x: 24 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -24 }}>
-                <h2 className="text-2xl font-serif font-semibold mb-1">Payment</h2>
+                <h2 className="text-2xl font-bold mb-1">Payment</h2>
                 <p className="text-sm text-[color:var(--color-muted)] mb-6">Associate upgrade fee — fully tax deductible.</p>
 
-                <div className="rounded-2xl border border-border p-6 bg-surface mb-6">
+                <div className="rounded-lg border border-border p-6 bg-surface mb-6">
                   <div className="flex items-center justify-between mb-2">
                     <span className="text-sm text-ink/70">Associate Upgrade Fee</span>
                     <span className="font-semibold">$450.00</span>
@@ -108,7 +108,7 @@ export function UpgradeStepper() {
                   </div>
                   <div className="border-t border-border pt-3 mt-3 flex items-center justify-between">
                     <span className="font-medium">Total (incl. GST)</span>
-                    <span className="text-2xl font-serif font-semibold">$630.00</span>
+                    <span className="text-2xl font-bold">$630.00</span>
                   </div>
                 </div>
 
@@ -142,7 +142,7 @@ export function UpgradeStepper() {
                 >
                   <Sparkles className="w-10 h-10 text-green-600" />
                 </motion.div>
-                <h2 className="text-3xl font-serif font-semibold mb-2">You&apos;re upgraded.</h2>
+                <h2 className="text-3xl font-bold mb-2">You&apos;re upgraded.</h2>
                 <p className="text-ink/70 mb-6 max-w-md mx-auto">
                   Your application is in — you&apos;re now a Provisional Associate pending panel review (typically 14 days).
                 </p>

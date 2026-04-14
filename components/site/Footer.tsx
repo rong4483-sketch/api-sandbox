@@ -9,46 +9,46 @@ export function Footer() {
   if (pathname.startsWith("/membership") || pathname === "/login") return null;
 
   return (
-    <footer className="border-t border-border bg-white mt-24">
-      <div className="mx-auto max-w-7xl px-6 py-12 grid md:grid-cols-4 gap-8">
+    <footer className="bg-brand-500 text-white mt-24">
+      <div className="mx-auto max-w-7xl px-6 py-16 grid md:grid-cols-4 gap-8">
         <div className="md:col-span-2">
-          <Logo href={null} />
-          <p className="mt-4 text-sm text-[color:var(--color-muted)] max-w-md">
+          <Logo variant="mono" href={null} />
+          <p className="mt-4 text-sm text-white/70 max-w-md">
             National body for property valuation and advisory professionals — this is a
             non-production sandbox demonstrating the proposed &quot;National-First&quot;
             redesign for stakeholder review.
           </p>
-          <p className="mt-3 inline-flex items-center gap-2 rounded-full bg-amber-50 px-3 py-1 text-xs font-medium text-amber-700">
+          <p className="mt-3 inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1 text-xs font-medium text-white/80">
             Sandbox preview · fictional data
           </p>
         </div>
 
         <div>
-          <h4 className="text-sm font-semibold text-ink mb-3 font-sans">Pillars</h4>
-          <ul className="space-y-2 text-sm text-ink/75">
-            <li><Link href="/membership" className="hover:text-brand-600 hover:underline">Membership Portal</Link></li>
-            <li><Link href="/education" className="hover:text-brand-600 hover:underline">Education</Link></li>
-            <li><Link href="/standards" className="hover:text-brand-600 hover:underline">Standards</Link></li>
-            <li><Link href="/advocacy" className="hover:text-brand-600 hover:underline">Advocacy</Link></li>
-            <li><Link href="/directory" className="hover:text-brand-600 hover:underline">Directory</Link></li>
+          <h4 className="text-sm font-bold text-white mb-3">Pillars</h4>
+          <ul className="space-y-2 text-sm text-white/70">
+            <li><Link href="/membership" className="hover:text-white no-underline hover:underline">Membership Portal</Link></li>
+            <li><Link href="/education" className="hover:text-white no-underline hover:underline">Education</Link></li>
+            <li><Link href="/standards" className="hover:text-white no-underline hover:underline">Standards</Link></li>
+            <li><Link href="/advocacy" className="hover:text-white no-underline hover:underline">Advocacy</Link></li>
+            <li><Link href="/directory" className="hover:text-white no-underline hover:underline">Directory</Link></li>
           </ul>
         </div>
 
         <div>
-          <h4 className="text-sm font-semibold text-ink mb-3 font-sans">About</h4>
-          <ul className="space-y-2 text-sm text-ink/75">
-            <li><Link href="/about" className="hover:text-brand-600 hover:underline">About API</Link></li>
-            <li><Link href="/about/our-committees" className="hover:text-brand-600 hover:underline">Our Committees</Link></li>
-            <li><Link href="#" className="hover:text-brand-600 hover:underline">Privacy Policy</Link></li>
-            <li><Link href="#" className="hover:text-brand-600 hover:underline">Whistleblower Policy</Link></li>
-            <li><Link href="#" className="hover:text-brand-600 hover:underline">Contact</Link></li>
+          <h4 className="text-sm font-bold text-white mb-3">About</h4>
+          <ul className="space-y-2 text-sm text-white/70">
+            <li><Link href="/about" className="hover:text-white no-underline hover:underline">About API</Link></li>
+            <li><Link href="/about/our-committees" className="hover:text-white no-underline hover:underline">Our Committees</Link></li>
+            <li><Link href="#" className="hover:text-white no-underline hover:underline">Privacy Policy</Link></li>
+            <li><Link href="#" className="hover:text-white no-underline hover:underline">Whistleblower Policy</Link></li>
+            <li><Link href="#" className="hover:text-white no-underline hover:underline">Contact</Link></li>
           </ul>
         </div>
       </div>
 
-      <div className="border-t border-border">
-        <div className="mx-auto max-w-7xl px-6 py-4 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-[color:var(--color-muted)]">
-          <span>© {new Date().getFullYear()} Australian Property Institute — Sandbox PoC</span>
+      <div className="border-t border-white/20">
+        <div className="mx-auto max-w-7xl px-6 py-4 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-white/50">
+          <span>&copy; {new Date().getFullYear()} Australian Property Institute — Sandbox PoC</span>
           <span>ABN 49 007 505 866</span>
         </div>
       </div>

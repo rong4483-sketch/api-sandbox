@@ -27,9 +27,9 @@ export function TopNav() {
   if (inMembership || onLogin) return null;
 
   return (
-    <header className="sticky top-0 z-40 w-full border-b border-border bg-white/85 backdrop-blur supports-[backdrop-filter]:bg-white/70">
+    <header className="sticky top-0 z-40 w-full bg-brand-500">
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6">
-        <Logo />
+        <Logo variant="mono" />
 
         <nav className="hidden lg:flex items-center gap-1">
           {pillars.map((p) => {
@@ -40,8 +40,8 @@ export function TopNav() {
                 href={p.href}
                 aria-current={active ? "page" : undefined}
                 className={cn(
-                  "relative px-4 py-2 rounded-lg text-sm font-medium transition-colors",
-                  active ? "text-brand-600" : "text-ink/70 hover:text-ink hover:bg-surface"
+                  "relative px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-200 no-underline hover:no-underline",
+                  active ? "text-white bg-white/15" : "text-white/80 hover:text-white hover:bg-white/10"
                 )}
               >
                 {p.label}
@@ -58,19 +58,19 @@ export function TopNav() {
 
         <div className="hidden lg:flex items-center gap-2">
           {!inMembership && (
-            <Button asChild size="sm" variant="outline">
-              <Link href="/login">
+            <Button asChild size="sm" variant="outline" className="bg-white/10 border-white/30 text-white hover:bg-white/20 hover:text-white">
+              <Link href="/login" className="no-underline hover:no-underline">
                 <LogIn className="w-4 h-4" /> Member login
               </Link>
             </Button>
           )}
-          <Button asChild size="sm" variant="accent">
-            <Link href="/directory">Find a professional</Link>
+          <Button asChild size="sm" className="bg-action-500 hover:bg-action-600 text-white">
+            <Link href="/directory" className="no-underline hover:no-underline">Find a professional</Link>
           </Button>
         </div>
 
         <button
-          className="lg:hidden p-2"
+          className="lg:hidden p-2 text-white"
           aria-label="Open menu"
           onClick={() => setOpen((v) => !v)}
         >
@@ -84,7 +84,7 @@ export function TopNav() {
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
-            className="lg:hidden border-t border-border bg-white overflow-hidden"
+            className="lg:hidden border-t border-white/20 bg-brand-600 overflow-hidden"
           >
             <div className="px-6 py-4 space-y-1">
               {pillars.map((p) => (
@@ -92,14 +92,18 @@ export function TopNav() {
                   key={p.href}
                   href={p.href}
                   onClick={() => setOpen(false)}
-                  className="block py-3 text-base font-medium text-ink"
+                  className="block py-3 text-base font-medium text-white no-underline hover:no-underline hover:text-accent-400"
                 >
                   {p.label}
                 </Link>
               ))}
-              <div className="pt-3 flex gap-2 border-t border-border mt-2">
-                <Button asChild size="sm" variant="outline" className="flex-1"><Link href="/login">Member login</Link></Button>
-                <Button asChild size="sm" variant="accent" className="flex-1"><Link href="/directory">Find a pro</Link></Button>
+              <div className="pt-3 flex gap-2 border-t border-white/20 mt-2">
+                <Button asChild size="sm" variant="outline" className="flex-1 bg-white/10 border-white/30 text-white hover:bg-white/20">
+                  <Link href="/login" className="no-underline hover:no-underline">Member login</Link>
+                </Button>
+                <Button asChild size="sm" className="flex-1 bg-action-500 hover:bg-action-600 text-white">
+                  <Link href="/directory" className="no-underline hover:no-underline">Find a pro</Link>
+                </Button>
               </div>
             </div>
           </motion.div>

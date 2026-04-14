@@ -38,7 +38,7 @@ export default function MembershipDashboard() {
         <motion.div variants={fadeUp} className="mb-8 flex flex-col md:flex-row md:items-end md:justify-between gap-3">
           <div>
             <div className="text-sm text-[color:var(--color-muted)] mb-1">{greeting},</div>
-            <h1 className="text-4xl font-serif font-semibold text-ink">{currentMember.firstName} {currentMember.lastName}</h1>
+            <h1 className="text-[2.5rem] font-bold text-brand-500">{currentMember.firstName} {currentMember.lastName}</h1>
             <div className="mt-2 flex flex-wrap gap-2">
               <Badge variant="default">{currentMember.grade}</Badge>
               {currentMember.certifications.map((c) => (
@@ -64,7 +64,7 @@ export default function MembershipDashboard() {
                 {recentActivity.map((a) => {
                   const Icon = a.type === "cpd" ? Award : a.type === "invoice" ? Receipt : FileText;
                   return (
-                    <li key={a.id} className="px-6 py-3 flex items-center gap-3 hover:bg-surface">
+                    <li key={a.id} className="px-6 py-3 flex items-center gap-3 hover:bg-surface transition-colors duration-200">
                       <div className="w-9 h-9 rounded-lg bg-brand-50 text-brand-500 grid place-items-center">
                         <Icon className="w-4 h-4" />
                       </div>
@@ -79,14 +79,14 @@ export default function MembershipDashboard() {
             </CardContent>
           </Card>
 
-          <Card className="bg-gradient-to-br from-brand-500 to-brand-700 text-white border-0">
+          <Card className="bg-brand-500 text-white border-0">
             <CardContent className="p-6 h-full flex flex-col">
-              <div className="text-xs uppercase tracking-wider text-accent-400 mb-2 font-semibold">Professional record</div>
-              <h3 className="font-serif text-2xl font-semibold mb-3">Your CPV certification</h3>
+              <div className="text-xs uppercase tracking-wider text-accent-400 mb-2 font-bold">Professional record</div>
+              <h3 className="text-2xl font-bold mb-3">Your CPV certification</h3>
               <p className="text-sm text-white/80 mb-6 flex-1">
                 Member since {formatDate(currentMember.memberSince)}. Your PI Insurance is current via the APIV scheme.
               </p>
-              <a href="https://felix.api.org.au/products/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-sm font-medium text-accent-400 hover:text-accent-500">
+              <a href="https://felix.api.org.au/products/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-sm font-medium text-accent-400 hover:text-accent-500 no-underline hover:no-underline">
                 Browse CPD courses & events →
               </a>
             </CardContent>

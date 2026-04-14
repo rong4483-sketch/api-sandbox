@@ -1,24 +1,33 @@
 @import "tailwindcss";
 
-/* ---------- API Brand Design Tokens ---------- */
+/* ---------- API Corporate Design Tokens ---------- */
 @theme {
-  --color-brand-50: #E6F0F2;
-  --color-brand-100: #CCE1E5;
-  --color-brand-200: #99C3CB;
-  --color-brand-300: #66A5B1;
-  --color-brand-400: #338798;
-  --color-brand-500: #1D5F6E;   /* API teal — primary */
-  --color-brand-600: #174C58;
-  --color-brand-700: #113942;
-  --color-brand-800: #0B262C;
-  --color-brand-900: #051316;
+  /* Navy primary palette */
+  --color-brand-50: #E6EDF2;
+  --color-brand-100: #B3C9D9;
+  --color-brand-200: #809FBF;
+  --color-brand-300: #4D76A6;
+  --color-brand-400: #1A4D8C;
+  --color-brand-500: #002B49;   /* API Navy — primary */
+  --color-brand-600: #00223A;
+  --color-brand-700: #001A2C;
+  --color-brand-800: #00111D;
+  --color-brand-900: #00090F;
 
+  /* Action blue */
+  --color-action-400: #3378B5;
+  --color-action-500: #005A9C;   /* Primary buttons & active states */
+  --color-action-600: #004A80;
+  --color-action-700: #003A66;
+
+  /* Gold accent — retained for selective highlights */
   --color-accent-400: #E2BB3A;
-  --color-accent-500: #C9A227;   /* API gold */
+  --color-accent-500: #C9A227;
   --color-accent-600: #A3821D;
-  --color-accent-700: #856A17;   /* WCAG AA on white (4.6:1) */
+  --color-accent-700: #856A17;
 
-  --color-surface: #F7F8FA;
+  --color-surface: #F4F5F7;     /* Section backgrounds */
+  --color-white: #FFFFFF;        /* Content containers */
   --color-ink: #0F172A;
   --color-muted: #64748B;
   --color-border: #E2E8F0;
@@ -26,37 +35,49 @@
   --color-warning: #D97706;
   --color-danger:  #DC2626;
 
-  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
-  --font-serif: "Source Serif 4", Georgia, serif;
+  --font-sans: "Helvetica Neue", "Roboto", "Arial", ui-sans-serif, system-ui, sans-serif;
 
-  --radius-xl: 0.875rem;
-  --radius-2xl: 1rem;
-
-  --shadow-soft: 0 1px 2px rgba(15, 23, 42, 0.04), 0 8px 24px -12px rgba(15, 23, 42, 0.10);
-  --shadow-lift: 0 4px 12px rgba(15, 23, 42, 0.08), 0 24px 48px -24px rgba(15, 23, 42, 0.18);
+  --radius-xl: 0.5rem;
+  --radius-2xl: 0.75rem;
 }
 
 /* ---------- Base ---------- */
 html {
-  font-size: 18px;       /* 18px base for Silver Professionals */
+  font-size: 18px;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
 
 body {
-  background: var(--color-surface);
+  background: var(--color-white);
   color: var(--color-ink);
   font-family: var(--font-sans);
+  font-size: 1.125rem;
+  line-height: 1.6;
 }
 
 h1, h2, h3, h4 {
-  font-family: var(--font-serif);
-  letter-spacing: -0.01em;
+  font-family: var(--font-sans);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+h1 {
+  font-size: 3rem;
+  line-height: 1.1;
+}
+
+/* Links: no underline by default, underline on hover */
+a {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
 }
 
 /* Focus ring — WCAG AA */
 *:focus-visible {
-  outline: 2px solid var(--color-brand-500);
+  outline: 2px solid var(--color-action-500);
   outline-offset: 2px;
   border-radius: 4px;
 }

@@ -34,7 +34,7 @@ export function CpdProgress() {
       </CardHeader>
       <CardContent>
         <div className="mb-3 flex items-end gap-2">
-          <span className="text-4xl font-serif font-semibold text-ink">{completed}</span>
+          <span className="text-4xl font-bold text-ink">{completed}</span>
           <span className="text-lg text-[color:var(--color-muted)] pb-1">/ {total} hours</span>
         </div>
 

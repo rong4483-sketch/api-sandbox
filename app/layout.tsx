@@ -1,19 +1,14 @@
 import type { Metadata } from "next";
-import { Inter, Source_Serif_4 } from "next/font/google";
+import { Roboto } from "next/font/google";
 import "./globals.css";
 import { TopNav } from "@/components/site/TopNav";
 import { Footer } from "@/components/site/Footer";
 import { MemberConcierge } from "@/components/concierge/MemberConcierge";
 
-const inter = Inter({
+const roboto = Roboto({
   subsets: ["latin"],
-  variable: "--font-inter",
-  display: "swap",
-});
-
-const sourceSerif = Source_Serif_4({
-  subsets: ["latin"],
-  variable: "--font-source-serif",
+  weight: ["400", "500", "700"],
+  variable: "--font-roboto",
   display: "swap",
 });
 
@@ -25,7 +20,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en-AU" className={`${inter.variable} ${sourceSerif.variable}`}>
+    <html lang="en-AU" className={roboto.variable}>
       <body className="antialiased">
         <TopNav />
         {children}

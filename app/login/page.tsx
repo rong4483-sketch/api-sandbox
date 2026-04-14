@@ -32,22 +32,22 @@ export default function LoginPage() {
 
   return (
     <div className="min-h-screen grid lg:grid-cols-2">
-      {/* Brand panel */}
-      <div className="relative hidden lg:flex flex-col justify-between p-12 bg-gradient-to-br from-brand-500 via-brand-600 to-brand-700 text-white overflow-hidden">
+      {/* Brand panel — navy with architectural image */}
+      <div className="relative hidden lg:flex flex-col justify-between p-12 text-white overflow-hidden">
         <div
-          className="absolute inset-0 opacity-20"
+          className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage:
-              "radial-gradient(circle at 15% 20%, #C9A227 0%, transparent 45%), radial-gradient(circle at 80% 90%, #E2BB3A 0%, transparent 40%)",
+            backgroundImage: "url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200&h=900&fit=crop&q=80')",
           }}
           aria-hidden
         />
+        <div className="absolute inset-0 bg-brand-500/70" aria-hidden />
         <div className="relative">
           <Logo variant="mono" href="/" />
         </div>
 
         <div className="relative max-w-md">
-          <h2 className="text-4xl font-serif font-semibold leading-tight">
+          <h2 className="text-[2.5rem] font-bold leading-tight tracking-[-0.02em]">
             Welcome back to your professional home.
           </h2>
           <p className="mt-4 text-white/80 text-lg">
@@ -56,9 +56,9 @@ export default function LoginPage() {
           </p>
 
           <div className="mt-10 grid grid-cols-3 gap-4 text-sm">
-            <div><div className="text-2xl font-semibold text-accent-400">9,000+</div><div className="text-white/60">Members</div></div>
-            <div><div className="text-2xl font-semibold text-accent-400">$11T</div><div className="text-white/60">Property market</div></div>
-            <div><div className="text-2xl font-semibold text-accent-400">100+</div><div className="text-white/60">Years</div></div>
+            <div><div className="text-2xl font-bold text-accent-400">9,000+</div><div className="text-white/60">Members</div></div>
+            <div><div className="text-2xl font-bold text-accent-400">$11T</div><div className="text-white/60">Property market</div></div>
+            <div><div className="text-2xl font-bold text-accent-400">100+</div><div className="text-white/60">Years</div></div>
           </div>
         </div>
 
@@ -68,16 +68,16 @@ export default function LoginPage() {
       </div>
 
       {/* Auth card */}
-      <div className="flex items-center justify-center p-6 md:p-12">
+      <div className="flex items-center justify-center p-6 md:p-12 bg-white">
         <div className="w-full max-w-md">
-          <Link href="/" className="inline-flex items-center gap-2 text-sm text-[color:var(--color-muted)] hover:text-ink mb-8 lg:hidden">
+          <Link href="/" className="inline-flex items-center gap-2 text-sm text-[color:var(--color-muted)] hover:text-ink mb-8 lg:hidden no-underline hover:no-underline">
             <ArrowLeft className="w-4 h-4" /> Back to home
           </Link>
 
           <AnimatePresence mode="wait">
             {state === "idle" && (
               <motion.div key="idle" initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0 }}>
-                <h1 className="text-3xl font-serif font-semibold mb-2">Sign in</h1>
+                <h1 className="text-[2rem] font-bold mb-2 text-brand-500">Sign in</h1>
                 <p className="text-ink/70 mb-8">Choose how you&apos;d like to sign in today.</p>
 
                 <form onSubmit={sendMagicLink} className="space-y-4">
@@ -100,16 +100,16 @@ export default function LoginPage() {
                 <div className="relative my-6">
                   <div className="absolute inset-0 flex items-center"><div className="w-full border-t border-border" /></div>
                   <div className="relative flex justify-center text-xs uppercase tracking-wider">
-                    <span className="bg-surface px-3 text-[color:var(--color-muted)]">Or</span>
+                    <span className="bg-white px-3 text-[color:var(--color-muted)]">Or</span>
                   </div>
                 </div>
 
                 <Button variant="outline" size="lg" className="w-full" onClick={startBiometric}>
-                  <Fingerprint className="w-5 h-5 text-brand-500" /> Use biometric (passkey)
+                  <Fingerprint className="w-5 h-5 text-action-500" /> Use biometric (passkey)
                 </Button>
 
                 <p className="mt-8 text-center text-sm text-[color:var(--color-muted)]">
-                  New to API? <Link href="#" className="text-brand-600 font-medium hover:underline">Become a member</Link>
+                  New to API? <Link href="#" className="text-action-500 font-medium hover:underline">Become a member</Link>
                 </p>
               </motion.div>
             )}
@@ -119,12 +119,12 @@ export default function LoginPage() {
                 <div className="mx-auto w-16 h-16 rounded-full bg-brand-50 grid place-items-center mb-6">
                   <Mail className="w-7 h-7 text-brand-500" />
                 </div>
-                <h1 className="text-3xl font-serif font-semibold mb-3">Check your inbox</h1>
+                <h1 className="text-[2rem] font-bold mb-3 text-brand-500">Check your inbox</h1>
                 <p className="text-ink/70 mb-8">
                   We&apos;ve sent a secure sign-in link to <strong className="text-ink">{email}</strong>.
                   Click the link and you&apos;ll be signed straight into your dashboard.
                 </p>
-                <div className="rounded-xl border-2 border-dashed border-accent-500/40 bg-accent-500/5 p-4 mb-6 text-sm text-ink/80">
+                <div className="rounded-lg border-2 border-dashed border-accent-500/40 bg-accent-500/5 p-4 mb-6 text-sm text-ink/80">
                   <strong>Sandbox shortcut:</strong> magic links are simulated — click below to continue.
                 </div>
                 <Button size="lg" className="w-full" onClick={() => router.push("/membership")}>
@@ -145,7 +145,7 @@ export default function LoginPage() {
                 >
                   <Fingerprint className="w-12 h-12 text-brand-500" />
                 </motion.div>
-                <h1 className="text-2xl font-serif font-semibold mb-2">Verifying your passkey</h1>
+                <h1 className="text-2xl font-bold mb-2 text-brand-500">Verifying your passkey</h1>
                 <p className="text-ink/70 flex items-center justify-center gap-2">
                   <Loader2 className="w-4 h-4 animate-spin" /> Follow the prompt on your device
                 </p>
@@ -157,7 +157,7 @@ export default function LoginPage() {
                 <div className="mx-auto w-24 h-24 rounded-full bg-green-50 grid place-items-center mb-6">
                   <CheckCircle2 className="w-12 h-12 text-green-600" />
                 </div>
-                <h1 className="text-2xl font-serif font-semibold mb-2">Welcome back, {currentMember.firstName}</h1>
+                <h1 className="text-2xl font-bold mb-2">Welcome back, {currentMember.firstName}</h1>
                 <p className="text-ink/70">Taking you to your dashboard…</p>
               </motion.div>
             )}

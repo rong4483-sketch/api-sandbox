@@ -19,7 +19,7 @@ export default async function CertificationPage({ params }: { params: Promise<{ 
 
   return (
     <PageShell>
-      <Link href="/education" className="inline-flex items-center gap-1.5 text-sm text-[color:var(--color-muted)] hover:text-ink mb-6">
+      <Link href="/education" className="inline-flex items-center gap-1.5 text-sm text-[color:var(--color-muted)] hover:text-ink mb-6 no-underline hover:no-underline">
         <ArrowLeft className="w-4 h-4" /> Back to Education
       </Link>
 
@@ -30,20 +30,20 @@ export default async function CertificationPage({ params }: { params: Promise<{ 
             <Badge variant="default" className="text-base px-3 py-1">{cert.code}</Badge>
             <Badge variant="muted"><Clock className="w-3 h-3 mr-1 inline" />{cert.indicativeDurationMonths}-month indicative pathway</Badge>
           </div>
-          <h1 className="text-5xl font-serif font-semibold text-ink leading-tight mb-4">{cert.name}</h1>
+          <h1 className="text-[3rem] font-bold text-brand-500 leading-tight mb-4 tracking-[-0.02em]">{cert.name}</h1>
           <p className="text-xl text-ink/70 mb-8 max-w-2xl">{cert.tagline}</p>
 
-          <div className="rounded-2xl bg-white border border-border p-6 mb-10">
+          <div className="rounded-lg bg-white border border-border p-6 mb-10">
             <p className="text-ink/80 leading-relaxed">{cert.overview}</p>
           </div>
 
           <section className="mb-10">
-            <h2 className="text-2xl font-serif font-semibold mb-4 flex items-center gap-2">
-              <CheckCircle2 className="w-6 h-6 text-brand-500" /> Eligibility
+            <h2 className="text-2xl font-bold mb-4 flex items-center gap-2 text-brand-500">
+              <CheckCircle2 className="w-6 h-6" /> Eligibility
             </h2>
             <ul className="space-y-2">
               {cert.eligibility.map((e, i) => (
-                <li key={i} className="flex items-start gap-3 p-4 rounded-xl bg-white border border-border">
+                <li key={i} className="flex items-start gap-3 p-4 rounded-lg bg-white border border-border">
                   <div className="w-6 h-6 rounded-full bg-brand-50 text-brand-500 grid place-items-center shrink-0 mt-0.5">
                     <CheckCircle2 className="w-4 h-4" />
                   </div>
@@ -54,17 +54,17 @@ export default async function CertificationPage({ params }: { params: Promise<{ 
           </section>
 
           <section>
-            <h2 className="text-2xl font-serif font-semibold mb-2 flex items-center gap-2">
-              <Award className="w-6 h-6 text-brand-500" /> CPD & ongoing requirements
+            <h2 className="text-2xl font-bold mb-2 flex items-center gap-2 text-brand-500">
+              <Award className="w-6 h-6" /> CPD & ongoing requirements
             </h2>
             <p className="text-sm text-[color:var(--color-muted)] mb-5">
               All requirements — on this page. No PDFs to hunt for.
             </p>
 
-            <Accordion type="multiple" defaultValue={cert.requirements.map((r) => r.category)} className="bg-white border border-border rounded-2xl px-6">
+            <Accordion type="multiple" defaultValue={cert.requirements.map((r) => r.category)} className="bg-white border border-border rounded-lg px-6">
               {cert.requirements.map((req) => (
                 <AccordionItem key={req.category} value={req.category}>
-                  <AccordionTrigger className="font-serif text-lg">{req.category}</AccordionTrigger>
+                  <AccordionTrigger className="text-lg font-bold">{req.category}</AccordionTrigger>
                   <AccordionContent>
                     <ul className="space-y-2">
                       {req.items.map((item, i) => (
@@ -93,17 +93,17 @@ export default async function CertificationPage({ params }: { params: Promise<{ 
 
         {/* Sidebar */}
         <aside className="space-y-4 lg:sticky lg:top-28 self-start">
-          <Card className="bg-gradient-to-br from-brand-500 to-brand-700 text-white border-0">
+          <Card className="bg-brand-500 text-white border-0">
             <CardContent className="p-6">
-              <div className="text-xs uppercase tracking-wider text-accent-400 font-semibold mb-2">Ready to apply?</div>
-              <h3 className="font-serif text-xl font-semibold mb-4">Start your {cert.code} application</h3>
+              <div className="text-xs uppercase tracking-wider text-accent-400 font-bold mb-2">Ready to apply?</div>
+              <h3 className="text-xl font-bold mb-4">Start your {cert.code} application</h3>
               <div className="space-y-2 text-sm text-white/85 mb-5">
                 <div className="flex justify-between"><span>Renewal period</span><span className="font-medium text-white">{cert.renewalPeriodYears} year</span></div>
                 <div className="flex justify-between"><span>Mentor hours</span><span className="font-medium text-white">{cert.mentorHours} hrs</span></div>
                 <div className="flex justify-between"><span>Assessment</span><span className="font-medium text-white text-right text-xs">{cert.assessmentFormat}</span></div>
               </div>
               <Button variant="accent" className="w-full" asChild>
-                <Link href="/membership/upgrade">Apply now</Link>
+                <Link href="/membership/upgrade" className="no-underline hover:no-underline">Apply now</Link>
               </Button>
             </CardContent>
           </Card>

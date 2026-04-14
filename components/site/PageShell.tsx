@@ -19,7 +19,7 @@ export function PageShell({ children, className, constrain = true }: PageShellPr
       variants={pageTransition}
       className={cn(
         "min-h-[70vh]",
-        constrain && "mx-auto max-w-7xl px-6 py-10 md:py-14",
+        constrain && "mx-auto max-w-7xl px-6 py-24",
         className
       )}
     >
@@ -37,14 +37,14 @@ interface PageHeaderProps {
 
 export function PageHeader({ eyebrow, title, description, actions }: PageHeaderProps) {
   return (
-    <div className="mb-10 flex flex-col md:flex-row md:items-end md:justify-between gap-4">
+    <div className="mb-12 flex flex-col md:flex-row md:items-end md:justify-between gap-4">
       <div>
         {eyebrow && (
-          <div className="text-xs font-semibold uppercase tracking-[0.2em] text-accent-700 mb-3">
+          <div className="text-xs font-bold uppercase tracking-[0.2em] text-action-500 mb-3">
             {eyebrow}
           </div>
         )}
-        <h1 className="text-4xl md:text-5xl font-serif font-semibold text-ink leading-tight">
+        <h1 className="text-[3rem] md:text-[3.5rem] font-bold text-brand-500 leading-[1.1] tracking-[-0.02em]">
           {title}
         </h1>
         {description && (

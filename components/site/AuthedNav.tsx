@@ -28,11 +28,11 @@ export function AuthedNav() {
 
       <div className="px-4 py-5 border-b border-border">
         <div className="flex items-center gap-3">
-          <div className="w-11 h-11 rounded-full bg-brand-500 text-white grid place-items-center font-semibold">
+          <div className="w-11 h-11 rounded-full bg-brand-500 text-white grid place-items-center font-bold">
             {initials}
           </div>
           <div className="min-w-0">
-            <div className="text-sm font-semibold truncate">
+            <div className="text-sm font-bold truncate">
               {currentMember.firstName} {currentMember.lastName}
             </div>
             <div className="text-xs text-[color:var(--color-muted)] flex items-center gap-1">
@@ -53,9 +53,9 @@ export function AuthedNav() {
               href={it.href}
               aria-current={active ? "page" : undefined}
               className={cn(
-                "flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-colors",
+                "flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-colors duration-200 no-underline hover:no-underline",
                 active
-                  ? "bg-brand-50 text-brand-700"
+                  ? "bg-brand-50 text-brand-500"
                   : "text-ink/70 hover:bg-surface hover:text-ink"
               )}
             >
@@ -69,7 +69,7 @@ export function AuthedNav() {
       <div className="px-3 py-4 border-t border-border">
         <Link
           href="/"
-          className="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium text-ink/70 hover:bg-surface"
+          className="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium text-ink/70 hover:bg-surface no-underline hover:no-underline"
         >
           <LogOut className="w-5 h-5" /> Sign out
         </Link>

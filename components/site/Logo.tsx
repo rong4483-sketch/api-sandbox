@@ -9,12 +9,12 @@ interface LogoProps {
 
 /**
  * API Logo — SVG reconstruction based on the official API mark.
- * Bold "API" in white on a teal block, with the wordmark to the right.
+ * Bold "API" in white on a navy block, with the wordmark to the right.
  * Drop the official SVG into /public/brand/logo.svg to replace.
  */
 export function Logo({ className, variant = "default", href = "/" }: LogoProps) {
-  const fill = variant === "mono" ? "currentColor" : "#1D5F6E";
-  const textColor = variant === "mono" ? "currentColor" : "#1D5F6E";
+  const fill = variant === "mono" ? "currentColor" : "#002B49";
+  const textColor = variant === "mono" ? "currentColor" : "#002B49";
 
   const mark = (
     <span className={cn("inline-flex items-center gap-3", className)} aria-label="Australian Property Institute">
@@ -24,7 +24,7 @@ export function Logo({ className, variant = "default", href = "/" }: LogoProps) 
           x="36"
           y="36"
           textAnchor="middle"
-          fontFamily="Inter, sans-serif"
+          fontFamily="Helvetica Neue, Roboto, Arial, sans-serif"
           fontSize="28"
           fontWeight="900"
           fill="#FFFFFF"
@@ -46,7 +46,7 @@ export function Logo({ className, variant = "default", href = "/" }: LogoProps) 
 
   if (href === null) return mark;
   return (
-    <Link href={href} className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 rounded-lg">
+    <Link href={href} className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-action-500 rounded-lg no-underline hover:no-underline">
       {mark}
     </Link>
   );

@@ -29,16 +29,16 @@ export default function EducationPage() {
           const Icon = p.icon;
           return (
             <motion.div key={p.label} variants={fadeUp}>
-              <Card className="h-full hover:shadow-[0_24px_48px_-24px_rgba(15,23,42,0.18)] transition-all">
+              <Card className="h-full transition-all duration-200 hover:border-action-500">
                 <CardContent className="p-7">
-                  <div className="w-12 h-12 rounded-xl bg-brand-50 text-brand-500 grid place-items-center mb-5">
+                  <div className="w-12 h-12 rounded-lg bg-brand-50 text-brand-500 grid place-items-center mb-5">
                     <Icon className="w-6 h-6" />
                   </div>
-                  <h3 className="font-serif text-2xl font-semibold mb-2">{p.label}</h3>
+                  <h3 className="text-2xl font-bold mb-2">{p.label}</h3>
                   <p className="text-sm text-ink/75 mb-5">{p.desc}</p>
                   <div className="flex items-center justify-between">
                     <Badge variant="muted">{p.count}</Badge>
-                    <Link href={p.href} className="text-sm font-medium text-brand-600 inline-flex items-center gap-1 hover:gap-2 transition-all">
+                    <Link href={p.href} className="text-sm font-medium text-action-500 inline-flex items-center gap-1 hover:gap-2 transition-all no-underline hover:no-underline">
                       Explore <ArrowRight className="w-4 h-4" />
                     </Link>
                   </div>
@@ -51,22 +51,22 @@ export default function EducationPage() {
 
       <section id="certifications">
         <div className="mb-8">
-          <div className="text-xs font-semibold uppercase tracking-[0.2em] text-accent-700 mb-2">Certifications</div>
-          <h2 className="text-3xl font-serif font-semibold">Professional credentials</h2>
+          <div className="text-xs font-bold uppercase tracking-[0.2em] text-action-500 mb-2">Certifications</div>
+          <h2 className="text-[2rem] font-bold text-brand-500 tracking-[-0.02em]">Professional credentials</h2>
         </div>
 
         <div className="grid md:grid-cols-2 gap-6">
           {certifications.map((c) => (
-            <Link key={c.slug} href={`/education/${c.slug}`} className="block group">
-              <Card className="h-full transition-all group-hover:shadow-lg group-hover:border-brand-300">
+            <Link key={c.slug} href={`/education/${c.slug}`} className="block group no-underline hover:no-underline">
+              <Card className="h-full transition-all duration-200 group-hover:border-action-500">
                 <CardContent className="p-7">
                   <div className="flex items-start justify-between mb-4">
                     <Badge variant="default" className="text-base px-3 py-1">{c.code}</Badge>
                     <Badge variant="muted"><Clock className="w-3 h-3 mr-1 inline" />{c.indicativeDurationMonths} months</Badge>
                   </div>
-                  <h3 className="text-2xl font-serif font-semibold mb-2">{c.name}</h3>
+                  <h3 className="text-2xl font-bold mb-2">{c.name}</h3>
                   <p className="text-sm text-ink/75 mb-4">{c.tagline}</p>
-                  <div className="flex items-center text-sm font-medium text-brand-600 group-hover:gap-2 gap-1 transition-all">
+                  <div className="flex items-center text-sm font-medium text-action-500 group-hover:gap-2 gap-1 transition-all">
                     View requirements <ArrowRight className="w-4 h-4" />
                   </div>
                 </CardContent>

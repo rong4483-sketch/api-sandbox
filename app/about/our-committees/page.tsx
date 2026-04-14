@@ -82,10 +82,10 @@ export default function CommitteesPage() {
             <motion.div key={c.name} variants={fadeUp}>
               <Card className="h-full">
                 <CardContent className="p-7">
-                  <div className="w-12 h-12 rounded-xl bg-brand-50 text-brand-500 grid place-items-center mb-5">
+                  <div className="w-12 h-12 rounded-lg bg-brand-50 text-brand-500 grid place-items-center mb-5">
                     <Icon className="w-6 h-6" />
                   </div>
-                  <h3 className="font-serif text-xl font-semibold mb-2">{c.name}</h3>
+                  <h3 className="text-xl font-bold mb-2">{c.name}</h3>
                   <p className="text-sm text-ink/75">{c.desc}</p>
                 </CardContent>
               </Card>
@@ -95,8 +95,8 @@ export default function CommitteesPage() {
       </motion.div>
 
       {/* CTA Banner */}
-      <div className="rounded-2xl bg-brand-500 px-8 py-10 text-center text-white">
-        <h3 className="font-serif text-2xl font-semibold mb-3">Interested in joining a committee?</h3>
+      <div className="rounded-lg bg-brand-500 px-8 py-10 text-center text-white">
+        <h3 className="text-2xl font-bold mb-3">Interested in joining a committee?</h3>
         <p className="text-white/80 mb-6 max-w-lg mx-auto">
           Put your hand up to represent your region and help shape the future of the profession.
         </p>
