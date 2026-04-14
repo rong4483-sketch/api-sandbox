@@ -122,13 +122,13 @@ export default function LoginPage() {
                 <h1 className="text-3xl font-serif font-semibold mb-3">Check your inbox</h1>
                 <p className="text-ink/70 mb-8">
                   We&apos;ve sent a secure sign-in link to <strong className="text-ink">{email}</strong>.
-                  Click the link and you&apos;ll be signed straight into your Cockpit.
+                  Click the link and you&apos;ll be signed straight into your dashboard.
                 </p>
                 <div className="rounded-xl border-2 border-dashed border-accent-500/40 bg-accent-500/5 p-4 mb-6 text-sm text-ink/80">
                   <strong>Sandbox shortcut:</strong> magic links are simulated — click below to continue.
                 </div>
                 <Button size="lg" className="w-full" onClick={() => router.push("/membership")}>
-                  Continue to Cockpit
+                  Continue to dashboard
                 </Button>
                 <button onClick={() => setState("idle")} className="mt-4 text-sm text-[color:var(--color-muted)] hover:text-ink">
                   Use a different email
@@ -158,7 +158,7 @@ export default function LoginPage() {
                   <CheckCircle2 className="w-12 h-12 text-green-600" />
                 </div>
                 <h1 className="text-2xl font-serif font-semibold mb-2">Welcome back, {currentMember.firstName}</h1>
-                <p className="text-ink/70">Taking you to the Cockpit…</p>
+                <p className="text-ink/70">Taking you to your dashboard…</p>
               </motion.div>
             )}
           </AnimatePresence>
