@@ -70,21 +70,6 @@ export function MemberConcierge() {
                     </DialogPrimitive.Close>
                   </div>
 
-                  {/* Suggested prompts */}
-                  <div className="px-5 py-3 border-b border-border bg-surface">
-                    <div className="text-xs font-semibold text-[color:var(--color-muted)] mb-2">Try asking</div>
-                    <div className="flex flex-wrap gap-1.5">
-                      {suggestedPrompts.map((p) => (
-                        <span
-                          key={p}
-                          className="inline-flex items-center rounded-full bg-white border border-border px-3 py-1 text-xs text-ink/80"
-                        >
-                          {p}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-
                   {/* Iframe / fallback */}
                   <div className="flex-1 relative">
                     {!iframeFailed ? (
