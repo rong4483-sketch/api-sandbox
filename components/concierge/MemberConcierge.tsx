@@ -6,7 +6,7 @@ import { Sparkles, X, ExternalLink } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
 
-const CHATBOT_URL = "https://apichatbot2026.netlify.app/";
+const CHATBOT_URL = "https://api-chatbot.pages.dev/";
 
 const suggestedPrompts = [
   "Find specific CPV CPD rules",
