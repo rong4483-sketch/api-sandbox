@@ -1,15 +1,44 @@
+"use client";
+
 import Link from "next/link";
-import { ArrowLeft } from "lucide-react";
+import {
+  ArrowLeft,
+  Lightbulb,
+  Scale,
+  BookOpen,
+  Home,
+  ShieldCheck,
+  FlaskConical,
+  GraduationCap,
+  type LucideIcon,
+} from "lucide-react";
 import { PageShell, PageHeader } from "@/components/site/PageShell";
 import { Badge } from "@/components/ui/badge";
-import { committees, stateDivisions } from "@/lib/mock/governance";
+import {
+  Accordion,
+  AccordionItem,
+  AccordionTrigger,
+  AccordionContent,
+} from "@/components/ui/accordion";
+import { committees, stateDivisions, type Committee } from "@/lib/mock/governance";
 
-export const metadata = { title: "Our Committees — API Sandbox" };
+const ICONS: Record<Committee["iconKey"], LucideIcon> = {
+  lightbulb: Lightbulb,
+  scale: Scale,
+  bookOpen: BookOpen,
+  home: Home,
+  shieldCheck: ShieldCheck,
+  flaskConical: FlaskConical,
+  graduationCap: GraduationCap,
+};
 
 export default function CommitteesPage() {
   return (
     <PageShell>
-      <Link href="/about" className="inline-flex items-center gap-1.5 text-sm text-[color:var(--color-muted)] hover:text-ink mb-6 no-underline hover:no-underline">
+      <Link
+        href="/about"
+        className="inline-flex items-center gap-1.5 text-sm text-muted hover:text-ink mb-6 no-underline hover:no-underline"
+      >
         <ArrowLeft className="w-4 h-4" /> Back to About
       </Link>
       <PageHeader
@@ -19,48 +48,102 @@ export default function CommitteesPage() {
       />
 
       <section className="mb-16">
-        <h2 className="text-[1.75rem] font-bold text-brand-500 mb-6 tracking-[-0.02em]">National committees</h2>
-        <div className="overflow-hidden rounded-lg border border-border bg-white">
-          <table className="w-full text-sm">
-            <thead className="bg-surface text-xs uppercase tracking-wider text-[color:var(--color-muted)]">
-              <tr>
-                <th className="text-left font-bold px-5 py-3">Committee</th>
-                <th className="text-left font-bold px-5 py-3">Purpose</th>
-                <th className="text-left font-bold px-5 py-3">Chair</th>
-                <th className="text-left font-bold px-5 py-3">Cadence</th>
-              </tr>
-            </thead>
-            <tbody className="divide-y divide-border">
-              {committees.map((c) => (
-                <tr key={c.name} className="hover:bg-surface/60 transition-colors duration-150 align-top">
-                  <td className="px-5 py-4 font-medium text-ink w-64">{c.name}</td>
-                  <td className="px-5 py-4 text-ink/70 max-w-md">{c.purpose}</td>
-                  <td className="px-5 py-4 text-ink/70 whitespace-nowrap">{c.chair}</td>
-                  <td className="px-5 py-4">
-                    <Badge variant="muted">{c.meetingCadence}</Badge>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+        <div className="flex items-baseline justify-between mb-6">
+          <h2 className="text-3xl font-bold text-brand-500 tracking-tight">National committees</h2>
+          <span className="text-sm text-muted">{committees.length} committees · click to expand</span>
         </div>
+
+        <Accordion
+          type="multiple"
+          className="rounded-2xl border border-border divide-y divide-border bg-white"
+        >
+          {committees.map((c) => {
+            const Icon = ICONS[c.iconKey];
+            return (
+              <AccordionItem
+                key={c.slug}
+                value={c.slug}
+                className="border-0 first:rounded-t-2xl last:rounded-b-2xl"
+              >
+                <AccordionTrigger className="px-6 py-5 hover:bg-surface hover:no-underline [&[data-state=open]]:bg-surface">
+                  <div className="flex items-center gap-4 w-full">
+                    <div className="w-10 h-10 rounded-lg bg-brand-50 text-brand-500 grid place-items-center shrink-0">
+                      <Icon className="w-5 h-5" />
+                    </div>
+                    <div className="flex-1 text-left min-w-0">
+                      <div className="text-lg font-semibold text-ink">{c.name}</div>
+                      <div className="text-sm text-muted mt-0.5 line-clamp-1">{c.purpose}</div>
+                    </div>
+                    <div className="hidden md:flex items-center gap-3 text-sm text-muted mr-4 shrink-0">
+                      <span>Chair: <span className="text-ink font-medium">{c.chair}</span></span>
+                      <span className="text-muted-soft">·</span>
+                      <Badge variant="muted">{c.meetingCadence}</Badge>
+                    </div>
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent className="px-6 pb-8 pt-2">
+                  <div className="grid md:grid-cols-[2fr,1fr] gap-8">
+                    <div>
+                      <h4 className="text-sm font-semibold text-muted uppercase tracking-wide mb-3">Purpose</h4>
+                      <p className="text-body text-ink/85 leading-relaxed mb-8">{c.purposeFull}</p>
+
+                      <h4 className="text-sm font-semibold text-muted uppercase tracking-wide mb-3">Members</h4>
+                      <ul className="space-y-3">
+                        {c.members.map((m) => (
+                          <li key={`${m.name}-${m.state}`} className="flex items-start gap-3 text-sm">
+                            {m.role === "Chair" && (
+                              <span className="inline-flex items-center justify-center h-5 px-2 rounded-md bg-accent-500 text-brand-900 text-xs font-semibold shrink-0 mt-0.5">Chair</span>
+                            )}
+                            {m.role === "Deputy Chair" && (
+                              <span className="inline-flex items-center justify-center h-5 px-2 rounded-md bg-brand-50 text-brand-500 text-xs font-semibold shrink-0 mt-0.5">Deputy</span>
+                            )}
+                            {m.role === "Member" && (
+                              <span className="inline-flex items-center justify-center h-5 w-5 rounded-md border border-border shrink-0 mt-0.5"></span>
+                            )}
+                            <span className="flex-1">
+                              <span className="font-medium text-ink">{m.name}</span>
+                              <span className="text-muted">
+                                {' '}— {m.grade}
+                                {m.designations?.length ? `, ${m.designations.join(', ')}` : ''}
+                                {' '}· {m.state}
+                                {m.focus ? ` · ${m.focus}` : ''}
+                              </span>
+                            </span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+
+                    <div className="md:border-l md:border-border md:pl-8">
+                      <h4 className="text-sm font-semibold text-muted uppercase tracking-wide mb-3">Staff support</h4>
+                      <div className="rounded-xl border border-border bg-surface p-4">
+                        <div className="font-medium text-ink">{c.staffLead.name}</div>
+                        <div className="text-sm text-muted mt-1">{c.staffLead.title}</div>
+                      </div>
+                    </div>
+                  </div>
+                </AccordionContent>
+              </AccordionItem>
+            );
+          })}
+        </Accordion>
       </section>
 
       <section>
-        <h2 className="text-[1.75rem] font-bold text-brand-500 mb-2 tracking-[-0.02em]">State committees</h2>
-        <p className="text-sm text-ink/70 mb-6 max-w-2xl">State committees shape advocacy priorities locally and provide critical advice on issues arising across the profession.</p>
-        <div className="overflow-hidden rounded-lg border border-border bg-white">
+        <h2 className="text-3xl font-bold text-brand-500 tracking-tight mb-2">State committees</h2>
+        <p className="text-sm text-muted mb-6 max-w-2xl">State committees shape advocacy priorities locally and provide critical advice on issues arising across the profession.</p>
+        <div className="overflow-hidden rounded-2xl border border-border bg-white">
           <table className="w-full text-sm">
-            <thead className="bg-surface text-xs uppercase tracking-wider text-[color:var(--color-muted)]">
+            <thead className="bg-surface text-xs uppercase tracking-wider text-muted">
               <tr>
-                <th className="text-left font-bold px-5 py-3">State / Territory</th>
-                <th className="text-left font-bold px-5 py-3">Chair</th>
-                <th className="text-left font-bold px-5 py-3">Member Relationship Manager</th>
+                <th className="text-left font-semibold px-5 py-3">State / Territory</th>
+                <th className="text-left font-semibold px-5 py-3">Chair</th>
+                <th className="text-left font-semibold px-5 py-3">Member Relationship Manager</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-border">
               {stateDivisions.map((s) => (
-                <tr key={s.state} className="hover:bg-surface/60 transition-colors duration-150">
+                <tr key={s.state} className="hover:bg-surface transition-colors duration-150">
                   <td className="px-5 py-3 font-medium text-ink">{s.state}</td>
                   <td className="px-5 py-3 text-ink/70">{s.chair}</td>
                   <td className="px-5 py-3 text-ink/70">{s.relationshipManager}</td>
