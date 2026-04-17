@@ -9,7 +9,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { RenewalStepper } from "@/components/renewal/Stepper";
 import { outstandingInvoices } from "@/lib/mock/renewal";
-import { cn } from "@/lib/utils";
+import { cn, formatCurrency } from "@/lib/utils";
 
 type Method = "card" | "bpay" | "eft";
 
@@ -142,16 +142,16 @@ function PaymentContent() {
                 {invoices.map((i) => (
                   <li key={i.id} className="flex justify-between gap-2">
                     <span className="text-ink/70 truncate">{i.description}</span>
-                    <span className="font-medium shrink-0">${i.total.toFixed(2)}</span>
+                    <span className="font-medium shrink-0">{formatCurrency(i.total)}</span>
                   </li>
                 ))}
               </ul>
               <div className="flex justify-between pt-3 border-t border-border">
                 <span className="font-bold text-ink">Total</span>
-                <span className="font-bold text-brand-500 text-xl">${total.toFixed(2)}</span>
+                <span className="font-bold text-brand-500 text-xl">{formatCurrency(total)}</span>
               </div>
               <Button variant="accent" className="w-full mt-5" size="lg" onClick={handleSubmit} disabled={processing}>
-                {processing ? "Processing payment…" : `Pay $${total.toFixed(2)}`}
+                {processing ? "Processing payment…" : `Pay ${formatCurrency(total)}`}
               </Button>
               <div className="mt-3 text-xs text-[color:var(--color-muted)] flex items-start gap-1.5">
                 <Database className="w-3 h-3 mt-0.5 shrink-0" />

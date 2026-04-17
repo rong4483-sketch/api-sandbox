@@ -10,6 +10,7 @@ import { Badge } from "@/components/ui/badge";
 import { RenewalStepper } from "@/components/renewal/Stepper";
 import { outstandingInvoices } from "@/lib/mock/renewal";
 import { currentMember } from "@/lib/mock/member";
+import { formatCurrency } from "@/lib/utils";
 
 function ReviewContent() {
   const params = useSearchParams();
@@ -72,16 +73,16 @@ function ReviewContent() {
                       {inv.lineItems.map((li, i) => (
                         <tr key={i}>
                           <td className="py-2 text-ink/75">{li.label}</td>
-                          <td className="py-2 text-right text-ink/75">${li.amount.toFixed(2)}</td>
+                          <td className="py-2 text-right text-ink/75">{formatCurrency(li.amount)}</td>
                         </tr>
                       ))}
                       <tr>
                         <td className="py-2 text-ink/60">GST</td>
-                        <td className="py-2 text-right text-ink/60">${inv.gst.toFixed(2)}</td>
+                        <td className="py-2 text-right text-ink/60">{formatCurrency(inv.gst)}</td>
                       </tr>
                       <tr className="bg-surface">
                         <td className="py-2 px-2 font-bold text-ink">Invoice total</td>
-                        <td className="py-2 px-2 text-right font-bold text-ink">${inv.total.toFixed(2)}</td>
+                        <td className="py-2 px-2 text-right font-bold text-ink">{formatCurrency(inv.total)}</td>
                       </tr>
                     </tbody>
                   </table>
@@ -97,9 +98,9 @@ function ReviewContent() {
             <CardContent className="p-6">
               <h3 className="text-sm uppercase tracking-wider font-bold text-[color:var(--color-muted)] mb-3">Order summary</h3>
               <dl className="space-y-2 text-sm">
-                <div className="flex justify-between"><dt className="text-ink/70">Subtotal</dt><dd className="font-medium">${subtotal.toFixed(2)}</dd></div>
-                <div className="flex justify-between"><dt className="text-ink/70">GST</dt><dd className="font-medium">${gst.toFixed(2)}</dd></div>
-                <div className="flex justify-between pt-3 border-t border-border"><dt className="font-bold text-ink">Total due</dt><dd className="font-bold text-brand-500 text-xl">${total.toFixed(2)}</dd></div>
+                <div className="flex justify-between"><dt className="text-ink/70">Subtotal</dt><dd className="font-medium">{formatCurrency(subtotal)}</dd></div>
+                <div className="flex justify-between"><dt className="text-ink/70">GST</dt><dd className="font-medium">{formatCurrency(gst)}</dd></div>
+                <div className="flex justify-between pt-3 border-t border-border"><dt className="font-bold text-ink">Total due</dt><dd className="font-bold text-brand-500 text-xl">{formatCurrency(total)}</dd></div>
               </dl>
               <Button className="w-full mt-5" size="lg" onClick={() => router.push(`/membership/renewals/payment?ids=${ids.join(",")}`)} disabled={invoices.length === 0}>
                 Proceed to payment →

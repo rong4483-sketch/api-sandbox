@@ -20,3 +20,10 @@ export function daysUntil(d: Date | string): number {
   const ms = target.getTime() - now.getTime();
   return Math.ceil(ms / (1000 * 60 * 60 * 24));
 }
+
+export function formatCurrency(n: number): string {
+  return "$" + n.toLocaleString("en-AU", {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
+  });
+}

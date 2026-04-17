@@ -10,6 +10,7 @@ import { Badge } from "@/components/ui/badge";
 import { RenewalStepper } from "@/components/renewal/Stepper";
 import { outstandingInvoices } from "@/lib/mock/renewal";
 import { currentMember } from "@/lib/mock/member";
+import { formatCurrency } from "@/lib/utils";
 
 function ConfirmationContent() {
   const params = useSearchParams();
@@ -69,12 +70,12 @@ function ConfirmationContent() {
                         <div className="font-medium text-ink">{i.description}</div>
                         <div className="text-xs text-[color:var(--color-muted)]">{i.id}</div>
                       </td>
-                      <td className="py-2 text-right font-medium text-ink">${i.total.toFixed(2)}</td>
+                      <td className="py-2 text-right font-medium text-ink">{formatCurrency(i.total)}</td>
                     </tr>
                   ))}
                   <tr className="bg-surface">
                     <td className="py-3 px-2 font-bold text-ink">Total</td>
-                    <td className="py-3 px-2 text-right font-bold text-brand-500 text-xl">${total.toFixed(2)}</td>
+                    <td className="py-3 px-2 text-right font-bold text-brand-500 text-xl">{formatCurrency(total)}</td>
                   </tr>
                 </tbody>
               </table>

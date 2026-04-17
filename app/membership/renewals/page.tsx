@@ -10,6 +10,7 @@ import { Button } from "@/components/ui/button";
 import { RenewalStepper } from "@/components/renewal/Stepper";
 import { outstandingInvoices, paidInvoices } from "@/lib/mock/renewal";
 import { currentMember } from "@/lib/mock/member";
+import { formatCurrency } from "@/lib/utils";
 
 export default function RenewalsPage() {
   const router = useRouter();
@@ -81,7 +82,7 @@ export default function RenewalsPage() {
                         </div>
                       </div>
                       <div className="text-right shrink-0">
-                        <div className="text-xl font-bold text-ink whitespace-nowrap">${inv.total.toFixed(2)}</div>
+                        <div className="text-xl font-bold text-ink whitespace-nowrap">{formatCurrency(inv.total)}</div>
                         <div className="text-xs text-[color:var(--color-muted)]">inc GST</div>
                       </div>
                     </div>
@@ -107,7 +108,7 @@ export default function RenewalsPage() {
                 <tr key={i.id} className="hover:bg-surface/60">
                   <td className="px-5 py-3 font-medium text-ink/75">{i.description}</td>
                   <td className="px-5 py-3 text-ink/55 text-xs">{i.id}</td>
-                  <td className="px-5 py-3 text-right text-ink/75">${i.total.toFixed(2)}</td>
+                  <td className="px-5 py-3 text-right text-ink/75">{formatCurrency(i.total)}</td>
                   <td className="px-5 py-3"><Badge variant="muted">Paid</Badge></td>
                 </tr>
               ))}
@@ -121,7 +122,7 @@ export default function RenewalsPage() {
         <CardContent className="p-6 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
           <div>
             <div className="text-xs text-[color:var(--color-muted)] uppercase tracking-wider font-bold">Selected total</div>
-            <div className="text-3xl font-bold text-brand-500">${total.toFixed(2)}</div>
+            <div className="text-3xl font-bold text-brand-500">{formatCurrency(total)}</div>
             <div className="text-xs text-[color:var(--color-muted)]">{selectedInvoices.length} invoice{selectedInvoices.length === 1 ? "" : "s"} selected · includes GST</div>
           </div>
           <Button
