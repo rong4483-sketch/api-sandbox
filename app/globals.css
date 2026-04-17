@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
-/* ---------- API Brand Design Tokens ---------- */
+/* ---------- API Brand Design Tokens — Precise Editorial ---------- */
 @theme {
-  /* API Teal primary palette */
+  /* API Teal primary palette — unchanged */
   --color-brand-50: #E6F0F2;
   --color-brand-100: #CCE1E5;
   --color-brand-200: #99C3CB;
@@ -14,22 +14,39 @@
   --color-brand-800: #0B262C;
   --color-brand-900: #051316;
 
-  /* API Gold accent */
+  /* API Gold accent — unchanged */
   --color-accent-400: #E2BB3A;
-  --color-accent-500: #C9A227;   /* API gold */
+  --color-accent-500: #C9A227;
   --color-accent-600: #A3821D;
   --color-accent-700: #856A17;   /* WCAG AA on white (4.6:1) */
 
-  --color-surface: #F4F5F7;     /* Section backgrounds */
-  --color-white: #FFFFFF;        /* Content containers */
+  /* Neutral ladder — sharpened */
+  --color-surface: #F8FAFC;          /* was #F4F5F7 */
+  --color-surface-alt: #F1F5F9;      /* new */
+  --color-white: #FFFFFF;
   --color-ink: #0F172A;
   --color-muted: #64748B;
+  --color-muted-soft: #94A3B8;       /* new */
   --color-border: #E2E8F0;
+  --color-border-strong: #CBD5E1;    /* new */
   --color-success: #16A34A;
   --color-warning: #D97706;
   --color-danger:  #DC2626;
 
-  --font-sans: "Helvetica Neue", "Roboto", "Arial", ui-sans-serif, system-ui, sans-serif;
+  /* Typography — Inter with fallback chain */
+  --font-sans: var(--font-inter), "Helvetica Neue", "Roboto", "Arial", ui-sans-serif, system-ui, sans-serif;
+
+  /* 1.2 modular scale anchored on 18px body */
+  --text-xs: 0.75rem;       /* 12px */
+  --text-sm: 0.875rem;      /* 14px */
+  --text-base: 1rem;        /* 16px */
+  --text-body: 1.125rem;    /* 18px */
+  --text-lg: 1.25rem;       /* 20px */
+  --text-xl: 1.5rem;        /* 24px */
+  --text-2xl: 1.875rem;     /* 30px */
+  --text-3xl: 2.25rem;      /* 36px */
+  --text-4xl: 3rem;         /* 48px */
+  --text-5xl: 3.75rem;      /* 60px */
 
   --radius-xl: 0.5rem;
   --radius-2xl: 0.75rem;
@@ -46,27 +63,40 @@ body {
   background: var(--color-white);
   color: var(--color-ink);
   font-family: var(--font-sans);
-  font-size: 1.125rem;
+  font-size: var(--text-body);
   line-height: 1.6;
 }
 
 h1, h2, h3, h4 {
   font-family: var(--font-sans);
   font-weight: 700;
-  letter-spacing: -0.02em;
-}
-
-h1 {
-  font-size: 3rem;
   line-height: 1.1;
 }
 
-/* Links: no underline by default, underline on hover */
+h1 { font-size: var(--text-4xl); letter-spacing: -0.025em; }
+h2 { font-size: var(--text-3xl); letter-spacing: -0.02em; }
+h3 { font-size: var(--text-2xl); letter-spacing: -0.015em; }
+h4 { font-size: var(--text-xl); letter-spacing: -0.01em; }
+
+/* Body-prose links */
 a {
   text-decoration: none;
 }
 a:hover {
   text-decoration: underline;
+}
+
+.prose-link {
+  color: var(--color-brand-500);
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+  text-decoration-color: var(--color-brand-100);
+  transition: color 150ms ease, text-decoration-color 150ms ease;
+}
+.prose-link:hover {
+  color: var(--color-brand-700);
+  text-decoration-color: var(--color-brand-500);
 }
 
 /* Focus ring — WCAG AA */
