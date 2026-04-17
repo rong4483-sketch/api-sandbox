@@ -2,13 +2,15 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { LayoutDashboard, Award, BookOpen, Library, Megaphone, Users, LogOut, ArrowUpCircle } from "lucide-react";
+import { LayoutDashboard, Award, BookOpen, Library, Megaphone, Users, LogOut, ArrowUpCircle, Receipt, FileCheck2 } from "lucide-react";
 import { Logo } from "./Logo";
 import { currentMember } from "@/lib/mock/member";
 import { cn } from "@/lib/utils";
 
 const items = [
   { label: "Dashboard", href: "/membership", icon: LayoutDashboard },
+  { label: "Renewals", href: "/membership/renewals", icon: Receipt },
+  { label: "PropertyPRO", href: "/membership/propertypro", icon: FileCheck2 },
   { label: "Upgrade", href: "/membership/upgrade", icon: ArrowUpCircle },
   { label: "Education", href: "/education", icon: BookOpen },
   { label: "Standards", href: "/standards", icon: Library },
@@ -43,9 +45,9 @@ export function AuthedNav() {
         </div>
       </div>
 
-      <nav className="flex-1 px-3 py-4 space-y-1 overflow-y-auto">
+      <nav className="flex-1 px-3 py-4 space-y-0.5 overflow-y-auto">
         {items.map((it) => {
-          const active = pathname === it.href;
+          const active = pathname === it.href || (it.href !== "/membership" && pathname.startsWith(it.href));
           const Icon = it.icon;
           return (
             <Link
@@ -53,7 +55,7 @@ export function AuthedNav() {
               href={it.href}
               aria-current={active ? "page" : undefined}
               className={cn(
-                "flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-colors duration-200 no-underline hover:no-underline",
+                "flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-colors duration-150 no-underline hover:no-underline",
                 active
                   ? "bg-brand-50 text-brand-500"
                   : "text-ink/70 hover:bg-surface hover:text-ink"

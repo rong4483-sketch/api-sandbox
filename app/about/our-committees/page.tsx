@@ -1,109 +1,75 @@
-"use client";
-
-import { motion } from "framer-motion";
-import { Lightbulb, Map, GraduationCap, Scale, Home, BookOpen, FlaskConical } from "lucide-react";
+import Link from "next/link";
+import { ArrowLeft } from "lucide-react";
 import { PageShell, PageHeader } from "@/components/site/PageShell";
-import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { staggerContainer, fadeUp } from "@/lib/motion";
+import { Badge } from "@/components/ui/badge";
+import { committees, stateDivisions } from "@/lib/mock/governance";
 
-const committees = [
-  {
-    name: "Innovation Futures Advisory Group",
-    desc: "Providing sector insights, guiding the Australian Property Institute\u2019s future.",
-    icon: Lightbulb,
-  },
-  {
-    name: "State Committees",
-    desc: "Shaping our advocacy agenda and providing critical advice and insight into issues arising in the industry.",
-    icon: Map,
-  },
-  {
-    name: "YPP Committees",
-    desc: "The voice of the newest Members of our industry, helping inform the professional and social development of our Young Property Professionals.",
-    icon: GraduationCap,
-  },
-  {
-    name: "Standards Committee",
-    desc: "An expert committee assisting in developing and maintaining exceptional industry standards.",
-    icon: Scale,
-  },
-  {
-    name: "Residential Valuation Industry Group",
-    desc: "Providing industry leadership on residential valuations policies, operations and quality.",
-    icon: Home,
-  },
-  {
-    name: "National Education Committee",
-    desc: "Informing and developing the educational priorities at a national level.",
-    icon: BookOpen,
-  },
-  {
-    name: "APREF Committees",
-    desc: "Facilitating research and guiding scholarships, bursaries, and prizes in valuation and land economy.",
-    icon: FlaskConical,
-  },
-];
+export const metadata = { title: "Our Committees — API Sandbox" };
 
 export default function CommitteesPage() {
   return (
     <PageShell>
+      <Link href="/about" className="inline-flex items-center gap-1.5 text-sm text-[color:var(--color-muted)] hover:text-ink mb-6 no-underline hover:no-underline">
+        <ArrowLeft className="w-4 h-4" /> Back to About
+      </Link>
       <PageHeader
-        eyebrow="About"
+        eyebrow="Governance"
         title="Our Committees"
-        description="Working with industry professionals to help shape the future."
+        description="Consultative committees of expert industry professionals who help shape standards, education, innovation and advocacy. A charter governs each committee and stipulates its roles, responsibilities and election cycle."
       />
 
-      <div className="space-y-4 text-ink/80 leading-relaxed max-w-3xl mb-12">
-        <p>
-          This helps us ensure we remain firmly connected to the industry and are able to respond
-          to issues arising in the sector. Our committees are specifically designed to ensure the
-          API meets the diverse needs of our Members across a broad range of functions. Participation
-          in committees is strongly encouraged and is a great way to help shape the industry and grow
-          your leadership skills.
-        </p>
-        <p>
-          A charter governs each committee and stipulates the roles and responsibilities of various
-          committee positions, as well as the duties of API staff in supporting our committees. It
-          also outlines the committee terms and regular election cycles.
-        </p>
-      </div>
+      <section className="mb-16">
+        <h2 className="text-[1.75rem] font-bold text-brand-500 mb-6 tracking-[-0.02em]">National committees</h2>
+        <div className="overflow-hidden rounded-lg border border-border bg-white">
+          <table className="w-full text-sm">
+            <thead className="bg-surface text-xs uppercase tracking-wider text-[color:var(--color-muted)]">
+              <tr>
+                <th className="text-left font-bold px-5 py-3">Committee</th>
+                <th className="text-left font-bold px-5 py-3">Purpose</th>
+                <th className="text-left font-bold px-5 py-3">Chair</th>
+                <th className="text-left font-bold px-5 py-3">Cadence</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-border">
+              {committees.map((c) => (
+                <tr key={c.name} className="hover:bg-surface/60 transition-colors duration-150 align-top">
+                  <td className="px-5 py-4 font-medium text-ink w-64">{c.name}</td>
+                  <td className="px-5 py-4 text-ink/70 max-w-md">{c.purpose}</td>
+                  <td className="px-5 py-4 text-ink/70 whitespace-nowrap">{c.chair}</td>
+                  <td className="px-5 py-4">
+                    <Badge variant="muted">{c.meetingCadence}</Badge>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
 
-      <motion.div
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true, margin: "-80px" }}
-        variants={staggerContainer}
-        className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16"
-      >
-        {committees.map((c) => {
-          const Icon = c.icon;
-          return (
-            <motion.div key={c.name} variants={fadeUp}>
-              <Card className="h-full">
-                <CardContent className="p-7">
-                  <div className="w-12 h-12 rounded-lg bg-brand-50 text-brand-500 grid place-items-center mb-5">
-                    <Icon className="w-6 h-6" />
-                  </div>
-                  <h3 className="text-xl font-bold mb-2">{c.name}</h3>
-                  <p className="text-sm text-ink/75">{c.desc}</p>
-                </CardContent>
-              </Card>
-            </motion.div>
-          );
-        })}
-      </motion.div>
-
-      {/* CTA Banner */}
-      <div className="rounded-lg bg-brand-500 px-8 py-10 text-center text-white">
-        <h3 className="text-2xl font-bold mb-3">Interested in joining a committee?</h3>
-        <p className="text-white/80 mb-6 max-w-lg mx-auto">
-          Put your hand up to represent your region and help shape the future of the profession.
-        </p>
-        <Button variant="accent" size="lg">
-          Expression of interest
-        </Button>
-      </div>
+      <section>
+        <h2 className="text-[1.75rem] font-bold text-brand-500 mb-2 tracking-[-0.02em]">State committees</h2>
+        <p className="text-sm text-ink/70 mb-6 max-w-2xl">State committees shape advocacy priorities locally and provide critical advice on issues arising across the profession.</p>
+        <div className="overflow-hidden rounded-lg border border-border bg-white">
+          <table className="w-full text-sm">
+            <thead className="bg-surface text-xs uppercase tracking-wider text-[color:var(--color-muted)]">
+              <tr>
+                <th className="text-left font-bold px-5 py-3">State / Territory</th>
+                <th className="text-left font-bold px-5 py-3">Chair</th>
+                <th className="text-left font-bold px-5 py-3">Member Relationship Manager</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-border">
+              {stateDivisions.map((s) => (
+                <tr key={s.state} className="hover:bg-surface/60 transition-colors duration-150">
+                  <td className="px-5 py-3 font-medium text-ink">{s.state}</td>
+                  <td className="px-5 py-3 text-ink/70">{s.chair}</td>
+                  <td className="px-5 py-3 text-ink/70">{s.relationshipManager}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
     </PageShell>
   );
 }

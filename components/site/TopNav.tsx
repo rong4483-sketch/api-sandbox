@@ -4,7 +4,6 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { Menu, X, LogIn } from "lucide-react";
-import { AnimatePresence, motion } from "framer-motion";
 import { Logo } from "./Logo";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
@@ -22,7 +21,6 @@ export function TopNav() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
 
-  // Hide on authed cockpit layout and login — AuthedNav handles that context
   const inMembership = pathname.startsWith("/membership");
   const onLogin = pathname === "/login";
   if (inMembership || onLogin) return null;
@@ -41,30 +39,23 @@ export function TopNav() {
                 href={p.href}
                 aria-current={active ? "page" : undefined}
                 className={cn(
-                  "relative px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-200 no-underline hover:no-underline",
+                  "relative px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-150 no-underline hover:no-underline",
                   active ? "text-white bg-white/15" : "text-white/80 hover:text-white hover:bg-white/10"
                 )}
               >
                 {p.label}
-                {active && (
-                  <motion.span
-                    layoutId="navIndicator"
-                    className="absolute inset-x-3 -bottom-0.5 h-0.5 bg-accent-500 rounded-full"
-                  />
-                )}
+                {active && <span className="absolute inset-x-3 -bottom-0.5 h-0.5 bg-accent-500 rounded-full" />}
               </Link>
             );
           })}
         </nav>
 
         <div className="hidden lg:flex items-center gap-2">
-          {!inMembership && (
-            <Button asChild size="sm" variant="outline" className="bg-white/10 border-white/30 text-white hover:bg-white/20 hover:text-white">
-              <Link href="/login" className="no-underline hover:no-underline">
-                <LogIn className="w-4 h-4" /> Member login
-              </Link>
-            </Button>
-          )}
+          <Button asChild size="sm" variant="outline" className="bg-white/10 border-white/30 text-white hover:bg-white/20 hover:text-white">
+            <Link href="/login" className="no-underline hover:no-underline">
+              <LogIn className="w-4 h-4" /> Member login
+            </Link>
+          </Button>
           <Button asChild size="sm" variant="accent">
             <Link href="/directory" className="no-underline hover:no-underline">Find a professional</Link>
           </Button>
@@ -79,37 +70,30 @@ export function TopNav() {
         </button>
       </div>
 
-      <AnimatePresence>
-        {open && (
-          <motion.div
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            className="lg:hidden border-t border-white/20 bg-brand-600 overflow-hidden"
-          >
-            <div className="px-6 py-4 space-y-1">
-              {pillars.map((p) => (
-                <Link
-                  key={p.href}
-                  href={p.href}
-                  onClick={() => setOpen(false)}
-                  className="block py-3 text-base font-medium text-white no-underline hover:no-underline hover:text-accent-400"
-                >
-                  {p.label}
-                </Link>
-              ))}
-              <div className="pt-3 flex gap-2 border-t border-white/20 mt-2">
-                <Button asChild size="sm" variant="outline" className="flex-1 bg-white/10 border-white/30 text-white hover:bg-white/20">
-                  <Link href="/login" className="no-underline hover:no-underline">Member login</Link>
-                </Button>
-                <Button asChild size="sm" variant="accent" className="flex-1">
-                  <Link href="/directory" className="no-underline hover:no-underline">Find a pro</Link>
-                </Button>
-              </div>
+      {open && (
+        <div className="lg:hidden border-t border-white/20 bg-brand-600">
+          <div className="px-6 py-4 space-y-1">
+            {pillars.map((p) => (
+              <Link
+                key={p.href}
+                href={p.href}
+                onClick={() => setOpen(false)}
+                className="block py-3 text-base font-medium text-white no-underline hover:no-underline hover:text-accent-400"
+              >
+                {p.label}
+              </Link>
+            ))}
+            <div className="pt-3 flex gap-2 border-t border-white/20 mt-2">
+              <Button asChild size="sm" variant="outline" className="flex-1 bg-white/10 border-white/30 text-white hover:bg-white/20">
+                <Link href="/login" className="no-underline hover:no-underline">Member login</Link>
+              </Button>
+              <Button asChild size="sm" variant="accent" className="flex-1">
+                <Link href="/directory" className="no-underline hover:no-underline">Find a pro</Link>
+              </Button>
             </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+          </div>
+        </div>
+      )}
     </header>
   );
 }

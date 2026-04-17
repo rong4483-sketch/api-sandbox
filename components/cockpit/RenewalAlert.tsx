@@ -30,7 +30,7 @@ export function RenewalAlert() {
             </div>
           </div>
           <Button size="sm" variant={urgent ? "accent" : "outline"} asChild>
-            <Link href="#">Renew now</Link>
+            <Link href="/membership/renewals" className="no-underline hover:no-underline">Renew now</Link>
           </Button>
         </div>
       </CardContent>
