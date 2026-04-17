@@ -31,11 +31,11 @@ export default function MembershipDashboard() {
   const greeting = new Date().getHours() < 12 ? "Good morning" : new Date().getHours() < 17 ? "Good afternoon" : "Good evening";
 
   return (
-    <div className="mx-auto max-w-6xl px-6 py-10">
-      <div className="mb-8 flex flex-col md:flex-row md:items-end md:justify-between gap-3">
+    <div className="mx-auto max-w-6xl px-6 md:px-8 py-12 md:py-16">
+      <div className="mb-10 flex flex-col md:flex-row md:items-end md:justify-between gap-3">
         <div>
-          <div className="text-sm text-[color:var(--color-muted)] mb-1">{greeting},</div>
-          <h1 className="text-[2.5rem] font-bold text-brand-500 tracking-[-0.02em]">{currentMember.firstName} {currentMember.lastName}</h1>
+          <div className="text-sm text-muted mb-1">{greeting},</div>
+          <h1 className="text-4xl md:text-5xl font-bold text-brand-500 tracking-[-0.025em]">{currentMember.firstName} {currentMember.lastName}</h1>
           <div className="mt-2 flex flex-wrap gap-2">
             <Badge variant="default">{currentMember.grade}</Badge>
             {currentMember.certifications.map((c) => (
@@ -54,7 +54,7 @@ export default function MembershipDashboard() {
       </div>
 
       <div className="grid md:grid-cols-3 gap-5">
-        <Card className="md:col-span-2">
+        <Card variant="data" className="md:col-span-2">
           <CardHeader><CardTitle className="text-lg">Recent activity</CardTitle></CardHeader>
           <CardContent>
             <ul className="divide-y divide-border -mx-6">
@@ -67,7 +67,7 @@ export default function MembershipDashboard() {
                     </div>
                     <div className="flex-1 min-w-0">
                       <div className="text-sm font-medium text-ink truncate">{a.title}</div>
-                      <div className="text-xs text-[color:var(--color-muted)]">{formatDate(a.when)}{a.hours ? ` · ${a.hours} hrs CPD` : ""}</div>
+                      <div className="text-xs text-muted">{formatDate(a.when)}{a.hours ? ` · ${a.hours} hrs CPD` : ""}</div>
                     </div>
                   </li>
                 );
