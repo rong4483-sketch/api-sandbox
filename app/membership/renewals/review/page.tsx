@@ -9,7 +9,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { RenewalStepper } from "@/components/renewal/Stepper";
 import { outstandingInvoices } from "@/lib/mock/renewal";
-import { currentMember } from "@/lib/mock/member";
+import { currentMember, gradeDisplay } from "@/lib/mock/member";
 import { formatCurrency } from "@/lib/utils";
 
 function ReviewContent() {
@@ -44,7 +44,7 @@ function ReviewContent() {
               <dl className="grid sm:grid-cols-2 gap-x-6 gap-y-3 text-sm">
                 <div className="flex justify-between border-b border-border pb-2"><dt className="text-[color:var(--color-muted)]">Name</dt><dd className="font-medium text-ink">{currentMember.firstName} {currentMember.lastName}</dd></div>
                 <div className="flex justify-between border-b border-border pb-2"><dt className="text-[color:var(--color-muted)]">Member #</dt><dd className="font-medium text-ink">{currentMember.memberNumber}</dd></div>
-                <div className="flex justify-between border-b border-border pb-2"><dt className="text-[color:var(--color-muted)]">Grade</dt><dd className="font-medium text-ink">{currentMember.grade} (AAPI)</dd></div>
+                <div className="flex justify-between border-b border-border pb-2"><dt className="text-[color:var(--color-muted)]">Grade</dt><dd className="font-medium text-ink">{gradeDisplay(currentMember.grade)}</dd></div>
                 <div className="flex justify-between border-b border-border pb-2"><dt className="text-[color:var(--color-muted)]">Certification</dt><dd className="font-medium text-ink">{currentMember.certifications.join(", ")}</dd></div>
                 <div className="flex justify-between border-b border-border pb-2"><dt className="text-[color:var(--color-muted)]">State</dt><dd className="font-medium text-ink">{currentMember.state}</dd></div>
                 <div className="flex justify-between border-b border-border pb-2"><dt className="text-[color:var(--color-muted)]">Member since</dt><dd className="font-medium text-ink">{new Date(currentMember.memberSince).toLocaleDateString("en-AU", { month: "short", year: "numeric" })}</dd></div>

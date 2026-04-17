@@ -52,8 +52,8 @@ export function Footer() {
           <ul className="space-y-2 text-sm">
             <li><Link href="/about/governance" className={linkClass}>Constitution</Link></li>
             <li><Link href="/about/governance" className={linkClass}>Whistleblower</Link></li>
-            <li><Link href="#" className={linkClass}>Privacy</Link></li>
-            <li><Link href="#" className={linkClass}>Contact</Link></li>
+            <li><Link href="/privacy" className={linkClass}>Privacy</Link></li>
+            <li><Link href="/contact" className={linkClass}>Contact</Link></li>
           </ul>
         </div>
       </div>

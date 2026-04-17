@@ -34,7 +34,7 @@ const pathways = [
     label: "University-Accredited Courses",
     icon: School,
     desc: "Bachelor's and postgraduate programs accredited by the API across 12 partner universities.",
-    href: "#",
+    href: "/education/accredited-courses",
     count: "12 partners",
   },
   {

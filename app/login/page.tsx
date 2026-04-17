@@ -109,7 +109,7 @@ export default function LoginPage() {
                 </Button>
 
                 <p className="mt-8 text-center text-sm text-[color:var(--color-muted)]">
-                  New to API? <Link href="#" className="text-brand-500 font-medium hover:underline">Become a member</Link>
+                  New to API? <Link href="/join" className="text-brand-500 font-medium hover:underline">Become a member</Link>
                 </p>
               </motion.div>
             )}

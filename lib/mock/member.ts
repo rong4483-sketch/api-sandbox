@@ -1,9 +1,11 @@
+export type MemberGrade = "Student" | "Provisional" | "Associate" | "Fellow";
+
 export interface Member {
   firstName: string;
   lastName: string;
   email: string;
   memberSince: string;
-  grade: "Student" | "Provisional" | "Associate" | "Fellow";
+  grade: MemberGrade;
   certifications: string[];
   cpd: {
     total: number;       // required
@@ -16,6 +18,15 @@ export interface Member {
   renewalDue: string;    // ISO date
   memberNumber: string;
   state: string;
+}
+
+export function gradeDisplay(grade: MemberGrade): string {
+  switch (grade) {
+    case "Associate": return "Associate (AAPI)";
+    case "Fellow": return "Fellow (FAPI)";
+    case "Provisional": return "Provisional";
+    case "Student": return "Student Member";
+  }
 }
 
 export const currentMember: Member = {
