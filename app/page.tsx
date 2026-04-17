@@ -77,11 +77,11 @@ export default function HomePage() {
             <Badge variant="accent" className="bg-accent-500 text-white mb-5 text-xs px-3 py-1">
               Sandbox preview · API Board review
             </Badge>
-            <h1 className="text-[3rem] md:text-[4rem] font-bold text-white leading-[1.05] tracking-[-0.02em]">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-[1.05] tracking-[-0.03em]">
               A National-First<br />
               <span className="text-accent-400">Australian Property Institute.</span>
             </h1>
-            <p className="mt-6 text-lg text-white/85 max-w-2xl leading-relaxed">
+            <p className="mt-6 text-lg md:text-xl text-white/85 max-w-2xl leading-relaxed tracking-[-0.01em]">
               Five pillars. One unified member experience. Architected for the WordPress-over-iMIS path — public content layered cleanly over authenticated member functions.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
@@ -101,7 +101,7 @@ export default function HomePage() {
         <div className="mb-10 flex items-end justify-between gap-6 flex-wrap">
           <div>
             <div className="text-xs font-bold uppercase tracking-[0.2em] text-brand-500 mb-2">Information architecture</div>
-            <h2 className="text-[2.25rem] font-bold text-brand-500 tracking-[-0.02em]">Five pillars plus About.</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-brand-500 tracking-[-0.025em]">Five pillars plus About.</h2>
           </div>
           <p className="text-sm text-ink/70 max-w-md">Each pillar is a discrete user journey with a clear authentication boundary. No menu overlaps, no dead ends, no duplicated content.</p>
         </div>
@@ -110,18 +110,18 @@ export default function HomePage() {
           {pillars.map((p) => {
             const Icon = p.icon;
             return (
-              <Link key={p.href} href={p.href} className="group block h-full no-underline hover:no-underline">
-                <Card className="h-full transition-colors duration-150 group-hover:border-brand-500">
-                  <CardContent className="p-6">
-                    <div className="flex items-center justify-between mb-4">
-                      <div className="w-11 h-11 rounded-lg bg-brand-50 text-brand-500 grid place-items-center">
+              <Link key={p.href} href={p.href} className="block h-full no-underline hover:no-underline">
+                <Card variant="prominent" interactive className="h-full">
+                  <CardContent className="p-8">
+                    <div className="flex items-center justify-between mb-5">
+                      <div className="w-12 h-12 rounded-lg bg-brand-50 text-brand-500 grid place-items-center">
                         <Icon className="w-5 h-5" />
                       </div>
-                      <span className="text-xs text-[color:var(--color-muted)]">{p.meta}</span>
+                      <span className="text-xs text-muted">{p.meta}</span>
                     </div>
-                    <h3 className="text-xl font-bold mb-2 text-ink">{p.label}</h3>
-                    <p className="text-sm text-ink/70 mb-4">{p.purpose}</p>
-                    <span className="inline-flex items-center gap-1 text-sm text-brand-500 font-medium">
+                    <h3 className="text-xl font-semibold mb-2 text-ink tracking-tight">{p.label}</h3>
+                    <p className="text-sm text-muted mb-5 leading-relaxed">{p.purpose}</p>
+                    <span className="inline-flex items-center gap-1.5 text-sm text-brand-500 font-medium">
                       Open <ArrowRight className="w-4 h-4" />
                     </span>
                   </CardContent>
@@ -140,23 +140,25 @@ export default function HomePage() {
               <Building2 className="w-4 h-4 text-brand-500" />
               <div className="text-xs font-bold uppercase tracking-[0.2em] text-brand-500">System architecture</div>
             </div>
-            <h2 className="text-[1.75rem] font-bold text-brand-500 tracking-[-0.02em] leading-tight">WordPress over iMIS.</h2>
-            <p className="text-sm text-ink/70 mt-3">This sandbox demonstrates the proposed production architecture: WordPress handles public content; the two existing Dynamics + iMIS databases continue to handle authenticated member functions.</p>
+            <h2 className="text-3xl font-bold text-brand-500 tracking-[-0.025em] leading-tight">WordPress over iMIS.</h2>
+            <p className="text-sm text-muted mt-3 leading-relaxed">This sandbox demonstrates the proposed production architecture: WordPress handles public content; the two existing Dynamics + iMIS databases continue to handle authenticated member functions.</p>
           </div>
-          <div className="grid sm:grid-cols-2 gap-4">
+          <div className="grid sm:grid-cols-2 gap-5">
             {proof.map((r) => (
-              <div key={r.title} className="bg-white border border-border rounded-lg p-5">
-                <h3 className="font-bold text-ink mb-1">{r.title}</h3>
-                <p className="text-sm text-ink/70">{r.detail}</p>
-              </div>
+              <Card key={r.title} variant="default">
+                <CardContent className="p-6">
+                  <h3 className="font-semibold text-ink mb-1 tracking-tight">{r.title}</h3>
+                  <p className="text-sm text-muted leading-relaxed">{r.detail}</p>
+                </CardContent>
+              </Card>
             ))}
           </div>
         </div>
       </section>
 
       {/* Board demo CTA */}
-      <section className="mx-auto max-w-7xl px-6 py-20 text-center">
-        <h2 className="text-[2rem] md:text-[2.5rem] font-bold text-brand-500 mb-3 tracking-[-0.02em]">Walk the Board through it.</h2>
+      <section className="mx-auto max-w-7xl px-6 py-24 text-center">
+        <h2 className="text-3xl md:text-4xl font-bold text-brand-500 mb-4 tracking-[-0.025em]">Walk the Board through it.</h2>
         <p className="text-ink/70 mb-8 max-w-xl mx-auto">Sign in as Jane Valuer (AAPI, CPV) to explore the Membership Portal, PropertyPRO and the Renewals flow — or jump into the public Directory.</p>
         <div className="flex flex-wrap justify-center gap-3">
           <Button asChild size="lg"><Link href="/login" className="no-underline hover:no-underline">Sign in</Link></Button>
