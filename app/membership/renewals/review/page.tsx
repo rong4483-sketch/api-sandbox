@@ -26,7 +26,7 @@ function ReviewContent() {
         <ArrowLeft className="w-4 h-4" /> Back to invoice selection
       </Link>
 
-      <h1 className="text-[2.5rem] font-bold text-brand-500 tracking-[-0.02em] leading-tight mb-1">Review your renewal</h1>
+      <h1 className="text-4xl md:text-5xl font-bold text-brand-500 tracking-[-0.025em] leading-tight mb-2">Review your renewal</h1>
       <p className="text-ink/70 mb-6">Confirm details before proceeding to payment. Member record and grade are read from iMIS.</p>
 
       <RenewalStepper current={2} />

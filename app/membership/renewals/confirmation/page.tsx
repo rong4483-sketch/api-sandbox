@@ -33,12 +33,12 @@ function ConfirmationContent() {
     <div className="mx-auto max-w-5xl px-6 py-10">
       <RenewalStepper current={4} />
 
-      <div className="text-center mb-10">
-        <div className="inline-flex w-16 h-16 rounded-full bg-success/10 text-success items-center justify-center mb-4">
-          <CheckCircle2 className="w-8 h-8" />
+      <div className="text-center mb-12">
+        <div className="inline-flex w-20 h-20 rounded-full bg-accent-500 text-brand-900 items-center justify-center mb-5 shadow-lg">
+          <CheckCircle2 className="w-10 h-10" />
         </div>
-        <h1 className="text-[2.5rem] font-bold text-brand-500 tracking-[-0.02em] leading-tight mb-2">Payment confirmed</h1>
-        <p className="text-ink/70">Thank you, {currentMember.firstName}. Your 2026 membership is renewed.</p>
+        <h1 className="text-4xl md:text-5xl font-bold text-brand-500 tracking-[-0.025em] leading-tight mb-3">Payment confirmed</h1>
+        <p className="text-muted text-lg">Thank you, {currentMember.firstName}. Your 2026 membership is renewed.</p>
       </div>
 
       <div className="grid lg:grid-cols-[1fr_320px] gap-8">
@@ -51,7 +51,7 @@ function ConfirmationContent() {
                   <h2 className="text-lg font-bold text-ink">Receipt</h2>
                   <div className="text-xs text-[color:var(--color-muted)] mt-0.5">{receiptNo} · {today.toLocaleDateString("en-AU", { day: "numeric", month: "long", year: "numeric" })}</div>
                 </div>
-                <Badge variant="accent">{methodStatus}</Badge>
+                <Badge variant="muted">{methodStatus}</Badge>
               </div>
 
               <dl className="grid sm:grid-cols-2 gap-x-6 gap-y-2 text-sm mb-5">

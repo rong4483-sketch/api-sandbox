@@ -42,7 +42,7 @@ function PaymentContent() {
         <ArrowLeft className="w-4 h-4" /> Back to review
       </Link>
 
-      <h1 className="text-[2.5rem] font-bold text-brand-500 tracking-[-0.02em] leading-tight mb-1">Payment</h1>
+      <h1 className="text-4xl md:text-5xl font-bold text-brand-500 tracking-[-0.025em] leading-tight mb-2">Payment</h1>
       <p className="text-ink/70 mb-6">Select a payment method. Card payments are processed via the API online payment gateway.</p>
 
       <RenewalStepper current={3} />
@@ -150,7 +150,7 @@ function PaymentContent() {
                 <span className="font-bold text-ink">Total</span>
                 <span className="font-bold text-brand-500 text-xl">${total.toFixed(2)}</span>
               </div>
-              <Button className="w-full mt-5" size="lg" onClick={handleSubmit} disabled={processing}>
+              <Button variant="accent" className="w-full mt-5" size="lg" onClick={handleSubmit} disabled={processing}>
                 {processing ? "Processing payment…" : `Pay $${total.toFixed(2)}`}
               </Button>
               <div className="mt-3 text-xs text-[color:var(--color-muted)] flex items-start gap-1.5">

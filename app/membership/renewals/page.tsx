@@ -87,7 +87,7 @@ export default function RenewalsPage() {
                     </div>
                     <div className="flex items-center gap-2 flex-wrap">
                       <Badge variant="muted">Due {new Date(inv.dueDate).toLocaleDateString("en-AU", { day: "numeric", month: "short", year: "numeric" })}</Badge>
-                      <Badge variant="accent">{inv.status}</Badge>
+                      <Badge variant="muted">{inv.status}</Badge>
                     </div>
                   </div>
                 </div>
