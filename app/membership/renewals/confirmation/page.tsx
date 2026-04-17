@@ -1,8 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { Suspense } from "react";
-import { useSearchParams } from "next/navigation";
+import { Suspense, useEffect } from "react";
+import { useSearchParams, useRouter } from "next/navigation";
 import { CheckCircle2, Download, Mail, Database, ArrowRight } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -14,6 +14,7 @@ import { formatCurrency } from "@/lib/utils";
 
 function ConfirmationContent() {
   const params = useSearchParams();
+  const router = useRouter();
   const ids = (params.get("ids") || "").split(",").filter(Boolean);
   const method = params.get("method") || "card";
   const invoices = outstandingInvoices.filter((i) => ids.includes(i.id));
@@ -29,6 +30,12 @@ function ConfirmationContent() {
       : method === "bpay"
         ? "Pending (2–3 business days)"
         : "Pending (on bank reconciliation)";
+
+  useEffect(() => {
+    if (invoices.length === 0) router.replace("/membership/renewals");
+  }, [invoices.length, router]);
+
+  if (invoices.length === 0) return null;
 
   return (
     <div className="mx-auto max-w-5xl px-6 py-10">

@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useState, Suspense } from "react";
+import { useState, Suspense, useEffect } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 import { ArrowLeft, CreditCard, Landmark, FileText, Lock, Database } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
@@ -22,6 +22,12 @@ function PaymentContent() {
 
   const [method, setMethod] = useState<Method>("card");
   const [processing, setProcessing] = useState(false);
+
+  useEffect(() => {
+    if (invoices.length === 0) router.replace("/membership/renewals");
+  }, [invoices.length, router]);
+
+  if (invoices.length === 0) return null;
 
   function handleSubmit() {
     setProcessing(true);

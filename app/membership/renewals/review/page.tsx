@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useSearchParams, useRouter } from "next/navigation";
-import { Suspense } from "react";
+import { Suspense, useEffect } from "react";
 import { ArrowLeft, Database, CheckCircle2 } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -20,6 +20,12 @@ function ReviewContent() {
   const subtotal = invoices.reduce((s, i) => s + i.amount, 0);
   const gst = invoices.reduce((s, i) => s + i.gst, 0);
   const total = subtotal + gst;
+
+  useEffect(() => {
+    if (invoices.length === 0) router.replace("/membership/renewals");
+  }, [invoices.length, router]);
+
+  if (invoices.length === 0) return null;
 
   return (
     <div className="mx-auto max-w-5xl px-6 py-10">
