@@ -230,7 +230,7 @@ export const committees: Committee[] = [
     slug: "apref",
     iconKey: "flaskConical",
     purposeFull: "Governs research grants and priorities under the Australian Property Research & Education Fund. Administers scholarships and bursaries and commissions industry research that informs API policy. Meets quarterly.",
-    staffLead: { name: "Ella Davraz", title: "Manager, Young Professionals & Research Programs" },
+    staffLead: { name: "Ella", title: "Manager, Young Professionals & Research Programs" },
     members: [
       { name: "Emeritus Professor Kathryn Vance-Harper", grade: "FAPI", state: "VIC", role: "Chair" },
       { name: "Dr. Leon Kowalski", grade: "FAPI", state: "NSW", role: "Deputy Chair" },
@@ -248,7 +248,7 @@ export const committees: Committee[] = [
     slug: "ypp",
     iconKey: "graduationCap",
     purposeFull: "Represents the interests of API members under 35 and guides the design of professional development, networking, and mentorship programs for early-career valuers and property advisers. Meets monthly.",
-    staffLead: { name: "Ella Davraz", title: "Manager, Young Professionals & Research Programs" },
+    staffLead: { name: "Ella", title: "Manager, Young Professionals & Research Programs" },
     members: [
       { name: "Zara Okonjo", grade: "AAPI", state: "NSW", role: "Chair" },
       { name: "Tom Reilly", grade: "AAPI", state: "VIC", role: "Deputy Chair" },
