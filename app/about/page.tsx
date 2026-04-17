@@ -85,16 +85,16 @@ export default function AboutPage() {
           {sections.map((s) => {
             const Icon = s.icon;
             return (
-              <Link key={s.href} href={s.href} className="group block no-underline hover:no-underline">
-                <Card className="h-full transition-colors duration-150 group-hover:border-brand-500">
-                  <CardContent className="p-6">
-                    <div className="w-11 h-11 rounded-lg bg-brand-50 text-brand-500 grid place-items-center mb-4">
+              <Link key={s.href} href={s.href} className="block no-underline hover:no-underline">
+                <Card variant="prominent" interactive className="h-full">
+                  <CardContent className="p-8">
+                    <div className="w-12 h-12 rounded-lg bg-brand-50 text-brand-500 grid place-items-center mb-6">
                       <Icon className="w-5 h-5" />
                     </div>
-                    <h3 className="text-lg font-bold mb-1 text-ink">{s.label}</h3>
-                    <div className="text-xs text-[color:var(--color-muted)] mb-3">{s.meta}</div>
-                    <p className="text-sm text-ink/70 mb-4">{s.description}</p>
-                    <span className="inline-flex items-center gap-1 text-sm font-medium text-brand-500">
+                    <h3 className="text-lg font-semibold mb-1 text-ink tracking-tight">{s.label}</h3>
+                    <div className="text-xs text-muted mb-3">{s.meta}</div>
+                    <p className="text-sm text-muted mb-5 leading-relaxed">{s.description}</p>
+                    <span className="inline-flex items-center gap-1.5 text-sm font-medium text-brand-500">
                       View <ArrowRight className="w-4 h-4" />
                     </span>
                   </CardContent>
@@ -118,7 +118,7 @@ export default function AboutPage() {
       </section>
 
       {/* Vision + Values + Objectives — condensed */}
-      <section className="mb-20 bg-surface border border-border rounded-lg p-10">
+      <section className="mb-20 bg-surface border border-border rounded-2xl p-10">
         <div className="grid lg:grid-cols-[1fr_2fr] gap-10">
           <div>
             <div className="text-xs font-bold uppercase tracking-[0.2em] text-brand-500 mb-3">Our vision</div>
@@ -143,11 +143,13 @@ export default function AboutPage() {
         <h2 className="text-[1.75rem] font-bold text-brand-500 tracking-[-0.02em] mb-6">Strategic objectives</h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
           {objectives.map((o, i) => (
-            <div key={o.label} className="border border-border rounded-lg p-5 bg-white">
-              <div className="text-xs text-brand-500 font-bold mb-1">0{i + 1}</div>
-              <h3 className="font-bold text-ink mb-1">{o.label}</h3>
-              <p className="text-sm text-ink/70">{o.desc}</p>
-            </div>
+            <Card key={o.label} variant="default">
+              <CardContent className="p-6">
+                <div className="text-xs text-brand-500 font-semibold mb-1 tracking-wider">0{i + 1}</div>
+                <h3 className="font-semibold text-ink mb-1 tracking-tight">{o.label}</h3>
+                <p className="text-sm text-muted leading-relaxed">{o.desc}</p>
+              </CardContent>
+            </Card>
           ))}
         </div>
       </section>
