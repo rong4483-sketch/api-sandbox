@@ -56,9 +56,9 @@ export default function LoginPage() {
           </p>
 
           <div className="mt-10 grid grid-cols-3 gap-4 text-sm">
-            <div><div className="text-2xl font-bold text-accent-400">9,000+</div><div className="text-white/60">Members</div></div>
-            <div><div className="text-2xl font-bold text-accent-400">$11T</div><div className="text-white/60">Property market</div></div>
-            <div><div className="text-2xl font-bold text-accent-400">100+</div><div className="text-white/60">Years</div></div>
+            <div><div className="text-2xl font-bold text-white/90">9,000+</div><div className="text-white/60">Members</div></div>
+            <div><div className="text-2xl font-bold text-white/90">$11T</div><div className="text-white/60">Property market</div></div>
+            <div><div className="text-2xl font-bold text-white/90">100+</div><div className="text-white/60">Years</div></div>
           </div>
         </div>
 
@@ -124,7 +124,7 @@ export default function LoginPage() {
                   We&apos;ve sent a secure sign-in link to <strong className="text-ink">{email}</strong>.
                   Click the link and you&apos;ll be signed straight into your dashboard.
                 </p>
-                <div className="rounded-lg border-2 border-dashed border-accent-500/40 bg-accent-500/5 p-4 mb-6 text-sm text-ink/80">
+                <div className="rounded-lg border-2 border-dashed border-brand-200 bg-brand-50 p-4 mb-6 text-sm text-ink/80">
                   <strong>Sandbox shortcut:</strong> magic links are simulated — click below to continue.
                 </div>
                 <Button size="lg" className="w-full" onClick={() => router.push("/membership")}>

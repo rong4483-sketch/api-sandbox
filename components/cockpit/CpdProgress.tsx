@@ -51,7 +51,7 @@ export function CpdProgress() {
             initial={{ width: 0 }}
             animate={{ width: `${unstructuredPct}%` }}
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.15 }}
-            className="bg-accent-500 h-full"
+            className="bg-brand-400 h-full"
             aria-label="Unstructured CPD"
           />
         </div>
@@ -66,7 +66,7 @@ export function CpdProgress() {
           </div>
           <div>
             <div className="flex items-center gap-2 mb-1">
-              <span className="w-2.5 h-2.5 rounded-full bg-accent-500" />
+              <span className="w-2.5 h-2.5 rounded-full bg-brand-400" />
               <span className="text-xs font-medium uppercase tracking-wider text-[color:var(--color-muted)]">Unstructured</span>
             </div>
             <div className="text-2xl font-semibold">{unstructured}<span className="text-sm text-[color:var(--color-muted)] font-normal"> / {requiredUnstructured} hrs</span></div>

@@ -62,14 +62,14 @@ export default function EducationPage() {
             <Link key={p.label} href={p.href} className="group block no-underline hover:no-underline">
               <Card className={`h-full transition-colors duration-150 group-hover:border-brand-500 ${p.primary ? "bg-brand-500 text-white border-0" : ""}`}>
                 <CardContent className="p-6">
-                  <div className={`w-11 h-11 rounded-lg grid place-items-center mb-4 ${p.primary ? "bg-accent-500 text-brand-900" : "bg-brand-50 text-brand-500"}`}>
+                  <div className={`w-11 h-11 rounded-lg grid place-items-center mb-4 ${p.primary ? "bg-white/15 text-white" : "bg-brand-50 text-brand-500"}`}>
                     <Icon className="w-5 h-5" />
                   </div>
                   <h3 className={`text-xl font-bold mb-1 ${p.primary ? "text-white" : "text-ink"}`}>{p.label}</h3>
                   <p className={`text-sm mb-4 ${p.primary ? "text-white/80" : "text-ink/70"}`}>{p.desc}</p>
                   <div className="flex items-center justify-between">
                     <Badge variant={p.primary ? "accent" : "muted"}>{p.count}</Badge>
-                    <span className={`text-sm font-medium inline-flex items-center gap-1 ${p.primary ? "text-accent-400" : "text-brand-500"}`}>
+                    <span className={`text-sm font-medium inline-flex items-center gap-1 ${p.primary ? "text-white" : "text-brand-500"}`}>
                       View <ArrowRight className="w-4 h-4" />
                     </span>
                   </div>

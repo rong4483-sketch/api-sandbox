@@ -26,8 +26,8 @@ export function MemberConcierge() {
           aria-label="Open Member Concierge"
           className={cn(
             "fixed bottom-6 right-6 z-40 h-16 w-16 rounded-full",
-            "bg-accent-500 text-brand-900 shadow-lg pulse-ring",
-            "hover:bg-accent-400 transition-colors",
+            "bg-brand-500 text-white shadow-lg pulse-ring",
+            "hover:bg-brand-700 transition-colors",
             "flex items-center justify-center"
           )}
         >
@@ -59,7 +59,7 @@ export function MemberConcierge() {
                   {/* Header */}
                   <div className="h-20 px-5 flex items-center justify-between border-b border-border bg-brand-500 text-white">
                     <div className="flex items-center gap-2">
-                      <Sparkles className="w-5 h-5 text-accent-400" />
+                      <Sparkles className="w-5 h-5 text-white" />
                       <div>
                         <DialogPrimitive.Title className="text-base font-semibold">Member Concierge</DialogPrimitive.Title>
                         <div className="text-xs text-white/75">AI assistant for standards, CPD, and guidance</div>

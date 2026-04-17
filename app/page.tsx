@@ -74,12 +74,12 @@ export default function HomePage() {
         <div className="absolute inset-0 bg-brand-500/80" aria-hidden />
         <div className="relative mx-auto max-w-7xl px-6 py-24 md:py-28">
           <div className="max-w-3xl">
-            <Badge variant="accent" className="bg-accent-500 text-white mb-5 text-xs px-3 py-1">
+            <Badge variant="outline" className="bg-white/10 text-white border-white/30 mb-5 text-xs px-3 py-1">
               Sandbox preview · API Board review
             </Badge>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-[1.05] tracking-[-0.03em]">
               A National-First<br />
-              <span className="text-accent-400">Australian Property Institute.</span>
+              <span className="text-white">Australian Property Institute.</span>
             </h1>
             <p className="mt-6 text-lg md:text-xl text-white/85 max-w-2xl leading-relaxed tracking-[-0.01em]">
               Five pillars. One unified member experience. Architected for the WordPress-over-iMIS path — public content layered cleanly over authenticated member functions.

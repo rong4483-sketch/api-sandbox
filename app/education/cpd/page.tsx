@@ -32,10 +32,10 @@ export default function CpdPublicBrowsePage() {
         description="Browse upcoming CPD-endorsed learning. Anyone can view the catalogue — booking a seat requires member sign-in via iMIS."
       />
 
-      <div className="mb-6 rounded-2xl border border-accent-500/40 bg-accent-500/5 p-4 flex items-start gap-3">
-        <Lock className="w-4 h-4 text-accent-700 mt-0.5 shrink-0" />
+      <div className="mb-6 rounded-2xl border border-brand-200 bg-brand-50 p-4 flex items-start gap-3">
+        <Lock className="w-4 h-4 text-brand-700 mt-0.5 shrink-0" />
         <div className="text-sm text-ink/85">
-          <span className="font-semibold text-accent-700">Authentication required for booking.</span> Browsing is public; completing a booking signs you in through the iMIS member database.
+          <span className="font-semibold text-brand-700">Authentication required for booking.</span> Browsing is public; completing a booking signs you in through the iMIS member database.
         </div>
       </div>
 

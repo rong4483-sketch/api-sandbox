@@ -110,7 +110,7 @@ export default function PropertyProPage() {
         <aside className="space-y-4 lg:sticky lg:top-10 self-start">
           <Card className="bg-brand-500 text-white border-0">
             <CardContent className="p-6">
-              <div className="text-xs uppercase tracking-wider text-accent-400 font-bold mb-2">PropertyPRO Plus</div>
+              <div className="text-xs uppercase tracking-wider text-white/80 font-bold mb-2">PropertyPRO Plus</div>
               <h3 className="text-xl font-bold mb-2">Launch the application</h3>
               <p className="text-sm text-white/80 mb-4">Hosted by PropertyPRO Technology Pty Ltd. Access is provisioned via your API member record.</p>
               <Button variant="accent" className="w-full">

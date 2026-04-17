@@ -82,45 +82,66 @@ export default function CommitteesPage() {
                   </div>
                 </AccordionTrigger>
                 <AccordionContent className="px-6 pb-8 pt-2">
-                  <div className="grid md:grid-cols-[2fr,1fr] gap-8">
-                    <div>
-                      <h4 className="text-sm font-semibold text-muted uppercase tracking-wide mb-3">Purpose</h4>
-                      <p className="text-body text-ink/85 leading-relaxed mb-8">{c.purposeFull}</p>
+                  <div className="max-w-3xl">
+                    <h4 className="text-sm font-semibold text-muted uppercase tracking-wide mb-3">Purpose</h4>
+                    <p className="text-body text-ink/85 leading-relaxed mb-8">{c.purposeFull}</p>
 
-                      <h4 className="text-sm font-semibold text-muted uppercase tracking-wide mb-3">Members</h4>
-                      <ul className="space-y-3">
-                        {c.members.map((m) => (
-                          <li key={`${m.name}-${m.state}`} className="flex items-start gap-3 text-sm">
-                            {m.role === "Chair" && (
-                              <span className="inline-flex items-center justify-center h-5 px-2 rounded-md bg-accent-500 text-brand-900 text-xs font-semibold shrink-0 mt-0.5">Chair</span>
-                            )}
-                            {m.role === "Deputy Chair" && (
-                              <span className="inline-flex items-center justify-center h-5 px-2 rounded-md bg-brand-50 text-brand-500 text-xs font-semibold shrink-0 mt-0.5">Deputy</span>
-                            )}
-                            {m.role === "Member" && (
-                              <span className="inline-flex items-center justify-center h-5 w-5 rounded-md border border-border shrink-0 mt-0.5"></span>
-                            )}
-                            <span className="flex-1">
-                              <span className="font-medium text-ink">{m.name}</span>
-                              <span className="text-muted">
-                                {' '}— {m.grade}
-                                {m.designations?.length ? `, ${m.designations.join(', ')}` : ''}
-                                {' '}· {m.state}
-                                {m.focus ? ` · ${m.focus}` : ''}
-                              </span>
+                    <h4 className="text-sm font-semibold text-muted uppercase tracking-wide mb-3">Leadership</h4>
+                    <ul className="space-y-2.5 mb-8">
+                      {c.members.filter((m) => m.role === "Chair").map((m) => (
+                        <li key={`${m.name}-${m.state}`} className="flex items-start gap-3">
+                          <span className="inline-flex items-center justify-center h-6 px-2.5 rounded-md bg-brand-500 text-white text-xs font-semibold shrink-0 mt-0.5 w-28">Chair</span>
+                          <span className="flex-1">
+                            <span className="font-semibold text-ink text-base">{m.name}</span>
+                            <span className="text-muted text-sm">
+                              {' '}— {m.grade}
+                              {m.designations?.length ? `, ${m.designations.join(', ')}` : ''}
+                              {' '}· {m.state}
+                              {m.focus ? ` · ${m.focus}` : ''}
                             </span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
+                          </span>
+                        </li>
+                      ))}
+                      {c.members.filter((m) => m.role === "Deputy Chair").map((m) => (
+                        <li key={`${m.name}-${m.state}`} className="flex items-start gap-3">
+                          <span className="inline-flex items-center justify-center h-6 px-2.5 rounded-md border border-brand-500 bg-white text-brand-500 text-xs font-semibold shrink-0 mt-0.5 w-28">Deputy Chair</span>
+                          <span className="flex-1">
+                            <span className="font-semibold text-ink text-sm">{m.name}</span>
+                            <span className="text-muted text-sm">
+                              {' '}— {m.grade}
+                              {m.designations?.length ? `, ${m.designations.join(', ')}` : ''}
+                              {' '}· {m.state}
+                              {m.focus ? ` · ${m.focus}` : ''}
+                            </span>
+                          </span>
+                        </li>
+                      ))}
+                      <li className="flex items-start gap-3">
+                        <span className="inline-flex items-center justify-center h-6 px-2.5 rounded-md bg-surface border border-border text-muted text-xs font-semibold shrink-0 mt-0.5 w-28">Staff lead</span>
+                        <span className="flex-1">
+                          <span className="font-semibold text-ink text-sm">{c.staffLead.name}</span>
+                          <span className="text-muted text-sm">{' '}— {c.staffLead.title}</span>
+                        </span>
+                      </li>
+                    </ul>
 
-                    <div className="md:border-l md:border-border md:pl-8">
-                      <h4 className="text-sm font-semibold text-muted uppercase tracking-wide mb-3">Staff support</h4>
-                      <div className="rounded-xl border border-border bg-surface p-4">
-                        <div className="font-medium text-ink">{c.staffLead.name}</div>
-                        <div className="text-sm text-muted mt-1">{c.staffLead.title}</div>
-                      </div>
-                    </div>
+                    <h4 className="text-sm font-semibold text-muted uppercase tracking-wide mb-3">Elected members</h4>
+                    <ul className="space-y-2">
+                      {c.members.filter((m) => m.role === "Member").map((m) => (
+                        <li key={`${m.name}-${m.state}`} className="flex items-start gap-3 text-sm">
+                          <span className="inline-block w-1.5 h-1.5 rounded-full bg-ink/25 shrink-0 mt-2 ml-2" aria-hidden />
+                          <span className="flex-1">
+                            <span className="font-medium text-ink">{m.name}</span>
+                            <span className="text-muted">
+                              {' '}— {m.grade}
+                              {m.designations?.length ? `, ${m.designations.join(', ')}` : ''}
+                              {' '}· {m.state}
+                              {m.focus ? ` · ${m.focus}` : ''}
+                            </span>
+                          </span>
+                        </li>
+                      ))}
+                    </ul>
                   </div>
                 </AccordionContent>
               </AccordionItem>

@@ -54,7 +54,7 @@ export function TopNav() {
                 {p.label}
                 <span
                   className={cn(
-                    "absolute left-0 -bottom-0.5 h-0.5 bg-accent-500 transition-[width] duration-200 ease-out",
+                    "absolute left-0 -bottom-0.5 h-0.5 bg-white transition-[width] duration-200 ease-out",
                     active ? "w-full" : "w-0 group-hover:w-full"
                   )}
                 />

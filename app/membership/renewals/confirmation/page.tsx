@@ -109,7 +109,7 @@ function ConfirmationContent() {
         <aside className="lg:sticky lg:top-10 self-start space-y-4">
           <Card className="bg-brand-500 text-white border-0">
             <CardContent className="p-6">
-              <div className="text-xs uppercase tracking-wider text-accent-400 font-bold mb-2">What's next</div>
+              <div className="text-xs uppercase tracking-wider text-white/80 font-bold mb-2">What's next</div>
               <h3 className="text-xl font-bold mb-3">Log your 2026 CPD</h3>
               <p className="text-sm text-white/80 mb-4">Your renewal year runs to 31 December 2026. Book webinars and masterclasses that count towards structured hours.</p>
               <Button variant="accent" className="w-full" asChild>

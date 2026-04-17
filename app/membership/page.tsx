@@ -78,14 +78,14 @@ export default function MembershipDashboard() {
 
         <Card className="bg-brand-500 text-white border-0">
           <CardContent className="p-6 h-full flex flex-col">
-            <div className="w-10 h-10 rounded-lg bg-accent-500 text-brand-900 grid place-items-center mb-4">
+            <div className="w-10 h-10 rounded-lg bg-white/15 text-white grid place-items-center mb-4">
               <FileCheck2 className="w-5 h-5" />
             </div>
             <h3 className="text-xl font-bold mb-2">PropertyPRO</h3>
             <p className="text-sm text-white/80 mb-4 flex-1">
               Residential mortgage valuation templates and the PropertyPRO Plus application — provisioned via your iMIS record.
             </p>
-            <Link href="/membership/propertypro" className="inline-flex items-center gap-2 text-sm font-medium text-accent-400 no-underline hover:no-underline">
+            <Link href="/membership/propertypro" className="inline-flex items-center gap-2 text-sm font-medium text-white no-underline hover:no-underline">
               Open PropertyPRO <ArrowRight className="w-4 h-4" />
             </Link>
           </CardContent>

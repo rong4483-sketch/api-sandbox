@@ -17,7 +17,7 @@ export default function ContactPage() {
       </Link>
 
       <div className="max-w-2xl">
-        <div className="text-xs font-bold uppercase tracking-[0.2em] text-accent-700 mb-3">
+        <div className="text-xs font-bold uppercase tracking-[0.2em] text-brand-500 mb-3">
           Support
         </div>
         <h1 className="text-[2.5rem] font-bold text-brand-500 tracking-[-0.02em] leading-tight mb-4">

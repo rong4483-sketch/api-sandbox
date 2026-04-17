@@ -41,7 +41,7 @@ export default function AdvocacyPage() {
             <div className="grid md:grid-cols-[1.1fr_1fr]">
               <div className="relative bg-brand-500 p-10 text-white flex flex-col justify-between min-h-[320px]">
                 <div className="relative">
-                  <Badge variant="accent" className="bg-accent-500 text-white mb-4">Flagship</Badge>
+                  <Badge variant="outline" className="bg-white/10 text-white border-white/30 mb-4">Flagship</Badge>
                   <h2 className="text-[2rem] md:text-[2.5rem] font-bold leading-tight mb-3 tracking-[-0.02em]">{featured.title}</h2>
                   <p className="text-white/80">{featured.excerpt}</p>
                 </div>
@@ -53,11 +53,11 @@ export default function AdvocacyPage() {
               <div className="p-10 bg-surface">
                 <h3 className="text-xl font-bold mb-4">What&apos;s inside</h3>
                 <ul className="space-y-3 text-sm text-ink/80">
-                  <li className="flex items-start gap-3"><span className="w-1.5 h-1.5 rounded-full bg-accent-500 mt-2.5 shrink-0" /> National commercial yield compression analysis</li>
-                  <li className="flex items-start gap-3"><span className="w-1.5 h-1.5 rounded-full bg-accent-500 mt-2.5 shrink-0" /> ESG & climate-risk pricing in 2026 markets</li>
-                  <li className="flex items-start gap-3"><span className="w-1.5 h-1.5 rounded-full bg-accent-500 mt-2.5 shrink-0" /> Office sector outlook post-hybrid work</li>
-                  <li className="flex items-start gap-3"><span className="w-1.5 h-1.5 rounded-full bg-accent-500 mt-2.5 shrink-0" /> Capital-flows and foreign investment trends</li>
-                  <li className="flex items-start gap-3"><span className="w-1.5 h-1.5 rounded-full bg-accent-500 mt-2.5 shrink-0" /> Retail centre recovery index</li>
+                  <li className="flex items-start gap-3"><span className="w-1.5 h-1.5 rounded-full bg-brand-400 mt-2.5 shrink-0" /> National commercial yield compression analysis</li>
+                  <li className="flex items-start gap-3"><span className="w-1.5 h-1.5 rounded-full bg-brand-400 mt-2.5 shrink-0" /> ESG & climate-risk pricing in 2026 markets</li>
+                  <li className="flex items-start gap-3"><span className="w-1.5 h-1.5 rounded-full bg-brand-400 mt-2.5 shrink-0" /> Office sector outlook post-hybrid work</li>
+                  <li className="flex items-start gap-3"><span className="w-1.5 h-1.5 rounded-full bg-brand-400 mt-2.5 shrink-0" /> Capital-flows and foreign investment trends</li>
+                  <li className="flex items-start gap-3"><span className="w-1.5 h-1.5 rounded-full bg-brand-400 mt-2.5 shrink-0" /> Retail centre recovery index</li>
                 </ul>
               </div>
             </div>

@@ -95,7 +95,7 @@ export default async function CertificationPage({ params }: { params: Promise<{ 
         <aside className="space-y-4 lg:sticky lg:top-28 self-start">
           <Card className="bg-brand-500 text-white border-0">
             <CardContent className="p-6">
-              <div className="text-xs uppercase tracking-wider text-accent-400 font-bold mb-2">Ready to apply?</div>
+              <div className="text-xs uppercase tracking-wider text-white/80 font-bold mb-2">Ready to apply?</div>
               <h3 className="text-xl font-bold mb-4">Start your {cert.code} application</h3>
               <div className="space-y-2 text-sm text-white/85 mb-5">
                 <div className="flex justify-between"><span>Renewal period</span><span className="font-medium text-white">{cert.renewalPeriodYears} year</span></div>

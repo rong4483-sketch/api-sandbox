@@ -157,11 +157,11 @@ export default function AboutPage() {
       {/* Brief History */}
       <section>
         <h2 className="text-[1.75rem] font-bold text-brand-500 tracking-[-0.02em] mb-6">A brief history</h2>
-        <div className="border-l-2 border-accent-500 pl-6 space-y-6">
+        <div className="border-l-2 border-brand-300 pl-6 space-y-6">
           {timeline.map((t) => (
             <div key={t.year} className="relative">
-              <div className="absolute -left-[calc(1.5rem+5px)] w-3 h-3 rounded-full bg-accent-500 border-2 border-white top-1" />
-              <div className="text-sm font-bold text-accent-700 mb-0.5">{t.year}</div>
+              <div className="absolute -left-[calc(1.5rem+5px)] w-3 h-3 rounded-full bg-brand-500 border-2 border-white top-1" />
+              <div className="text-sm font-bold text-brand-500 mb-0.5">{t.year}</div>
               <p className="text-ink/80 text-sm">{t.event}</p>
             </div>
           ))}
