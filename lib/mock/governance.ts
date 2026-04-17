@@ -96,12 +96,32 @@ export const memberRelationshipManagers: RelationshipManager[] = [
   { name: "Melanie McMeekin", coverage: "TAS / WA", location: "Hobart" },
 ];
 
+export type AustralianState = 'NSW' | 'VIC' | 'QLD' | 'WA' | 'SA' | 'TAS' | 'ACT' | 'NT';
+export type MembershipGrade = 'Associate AAPI' | 'AAPI' | 'FAPI';
+export type CommitteeRole = 'Chair' | 'Deputy Chair' | 'Member';
+
+export interface CommitteeMember {
+  name: string;
+  grade: MembershipGrade;
+  designations?: Array<'CPV'>;
+  state: AustralianState;
+  role: CommitteeRole;
+  focus?: string;
+}
+
 export interface Committee {
+  // Existing (preserved):
   name: string;
   purpose: string;
   chair: string;
   meetingCadence: string;
   scope: string;
+  // Extended for accordion:
+  slug: string;
+  iconKey: 'lightbulb' | 'scale' | 'bookOpen' | 'home' | 'shieldCheck' | 'flaskConical' | 'graduationCap';
+  purposeFull: string;
+  members: CommitteeMember[];
+  staffLead: { name: string; title: string };
 }
 
 export const committees: Committee[] = [
@@ -111,6 +131,19 @@ export const committees: Committee[] = [
     chair: "Victoria Gracie",
     meetingCadence: "Quarterly",
     scope: "National",
+    slug: "innovation-futures",
+    iconKey: "lightbulb",
+    purposeFull: "Provides sector insights and strategic guidance to the API Board on the long-term direction of the valuation profession — including technology, automation, ESG, and emerging practice areas. Meets quarterly.",
+    staffLead: { name: "Tristana Sidoryn", title: "General Manager, Policy & Standards" },
+    members: [
+      { name: "Andrew Sutherland", grade: "FAPI", designations: ["CPV"], state: "NSW", role: "Chair" },
+      { name: "Meredith Kwon", grade: "FAPI", designations: ["CPV"], state: "VIC", role: "Deputy Chair" },
+      { name: "Dr. Nathan Okafor", grade: "FAPI", state: "QLD", role: "Member" },
+      { name: "Priya Raghavan", grade: "AAPI", designations: ["CPV"], state: "WA", role: "Member" },
+      { name: "James McAllister", grade: "FAPI", designations: ["CPV"], state: "SA", role: "Member" },
+      { name: "Fiona Blake", grade: "AAPI", designations: ["CPV"], state: "TAS", role: "Member" },
+      { name: "Lucas Beaumont", grade: "AAPI", state: "ACT", role: "Member" },
+    ],
   },
   {
     name: "Standards Committee",
@@ -118,6 +151,18 @@ export const committees: Committee[] = [
     chair: "Mark Kay LFAPI",
     meetingCadence: "Bi-monthly",
     scope: "National",
+    slug: "standards",
+    iconKey: "scale",
+    purposeFull: "Develops and maintains the Australia & New Zealand Valuation & Property Standards (ANZVGN) and aligns API practice notes with International Valuation Standards (IVS). Reviews standards annually. Meets bi-monthly.",
+    staffLead: { name: "Tristana Sidoryn", title: "General Manager, Policy & Standards" },
+    members: [
+      { name: "Dr. Christopher Ashworth", grade: "FAPI", designations: ["CPV"], state: "VIC", role: "Chair" },
+      { name: "Rohini Venkataraman", grade: "FAPI", designations: ["CPV"], state: "NSW", role: "Deputy Chair" },
+      { name: "Gregory Paterson", grade: "FAPI", designations: ["CPV"], state: "QLD", role: "Member" },
+      { name: "Louise Hannigan", grade: "FAPI", designations: ["CPV"], state: "WA", role: "Member", focus: "Plant & Equipment" },
+      { name: "Takeshi Yamamoto", grade: "FAPI", designations: ["CPV"], state: "NSW", role: "Member", focus: "Commercial" },
+      { name: "Hannah Brereton", grade: "AAPI", designations: ["CPV"], state: "SA", role: "Member", focus: "Rural" },
+    ],
   },
   {
     name: "National Education Committee",
@@ -125,6 +170,18 @@ export const committees: Committee[] = [
     chair: "Raquel Bortoletto (staff lead)",
     meetingCadence: "Monthly",
     scope: "National",
+    slug: "national-education",
+    iconKey: "bookOpen",
+    purposeFull: "Informs and develops API's national education strategy including university-accredited pathways, CPD framework, online courses, and professional examinations. Reviews the education calendar annually. Meets monthly.",
+    staffLead: { name: "Raquel Bortoletto", title: "General Manager, Professional Development" },
+    members: [
+      { name: "Professor Adrian Carmody", grade: "FAPI", state: "VIC", role: "Chair" },
+      { name: "Sophia Alexandropoulos", grade: "FAPI", designations: ["CPV"], state: "NSW", role: "Deputy Chair" },
+      { name: "Dr. Nneka Adeyemi", grade: "FAPI", state: "QLD", role: "Member" },
+      { name: "Mitchell Pearce", grade: "AAPI", designations: ["CPV"], state: "WA", role: "Member" },
+      { name: "Amrita Chakraborty", grade: "AAPI", designations: ["CPV"], state: "SA", role: "Member" },
+      { name: "Declan Moriarty", grade: "FAPI", designations: ["CPV"], state: "TAS", role: "Member" },
+    ],
   },
   {
     name: "Residential Valuation Industry Group",
@@ -132,6 +189,18 @@ export const committees: Committee[] = [
     chair: "Darren Austin AAPI",
     meetingCadence: "Quarterly",
     scope: "National",
+    slug: "rvig",
+    iconKey: "home",
+    purposeFull: "Provides industry leadership on residential valuation policy, lender-panel operations, and residential practice quality. Coordinates directly with major lender panels and the residential mortgage sector. Meets quarterly.",
+    staffLead: { name: "Craig Barrett", title: "General Manager, Member & Industry Engagement" },
+    members: [
+      { name: "Nigel Barker", grade: "FAPI", designations: ["CPV"], state: "NSW", role: "Chair" },
+      { name: "Olivia Sterling", grade: "AAPI", designations: ["CPV"], state: "VIC", role: "Deputy Chair" },
+      { name: "Ramesh Narayanan", grade: "AAPI", designations: ["CPV"], state: "QLD", role: "Member" },
+      { name: "Charlotte Fitzgerald", grade: "AAPI", designations: ["CPV"], state: "WA", role: "Member" },
+      { name: "David Hallbrook", grade: "AAPI", designations: ["CPV"], state: "SA", role: "Member" },
+      { name: "Annika Lindqvist", grade: "AAPI", designations: ["CPV"], state: "ACT", role: "Member" },
+    ],
   },
   {
     name: "Professional Indemnity Insurance Subcommittee",
@@ -139,6 +208,18 @@ export const committees: Committee[] = [
     chair: "Robert Hecek",
     meetingCadence: "Bi-monthly",
     scope: "National",
+    slug: "pii",
+    iconKey: "shieldCheck",
+    purposeFull: "Oversees the APIV Limited Liability Scheme and related professional indemnity arrangements. Reviews PII policy terms, claims trends, and member access. Meets bi-monthly.",
+    staffLead: { name: "Craig Barrett", title: "General Manager, Member & Industry Engagement" },
+    members: [
+      { name: "Robert Hecek", grade: "FAPI", state: "NSW", role: "Chair" },
+      { name: "Michelle Beaumont", grade: "FAPI", designations: ["CPV"], state: "VIC", role: "Deputy Chair" },
+      { name: "Duncan Rothwell", grade: "FAPI", designations: ["CPV"], state: "WA", role: "Member" },
+      { name: "Anita Sharma", grade: "AAPI", designations: ["CPV"], state: "QLD", role: "Member", focus: "PI Insurance" },
+      { name: "Thomas Coleman", grade: "FAPI", designations: ["CPV"], state: "NSW", role: "Member" },
+      { name: "Julia Strahan", grade: "AAPI", designations: ["CPV"], state: "SA", role: "Member" },
+    ],
   },
   {
     name: "APREF Research Committee",
@@ -146,6 +227,17 @@ export const committees: Committee[] = [
     chair: "Dr Georgia Warren-Myers FAPI",
     meetingCadence: "Quarterly",
     scope: "National",
+    slug: "apref",
+    iconKey: "flaskConical",
+    purposeFull: "Governs research grants and priorities under the Australian Property Research & Education Fund. Administers scholarships and bursaries and commissions industry research that informs API policy. Meets quarterly.",
+    staffLead: { name: "Ella", title: "Manager, Young Professionals & Research Programs" },
+    members: [
+      { name: "Emeritus Professor Kathryn Vance-Harper", grade: "FAPI", state: "VIC", role: "Chair" },
+      { name: "Dr. Leon Kowalski", grade: "FAPI", state: "NSW", role: "Deputy Chair" },
+      { name: "Associate Professor Mei Tanaka", grade: "FAPI", state: "QLD", role: "Member" },
+      { name: "Dr. Yusuf Abdallah", grade: "AAPI", state: "WA", role: "Member" },
+      { name: "Penelope Whitfield", grade: "FAPI", designations: ["CPV"], state: "SA", role: "Member" },
+    ],
   },
   {
     name: "Young Property Professionals (YPP) National Committee",
@@ -153,6 +245,18 @@ export const committees: Committee[] = [
     chair: "Rotating YPP delegate",
     meetingCadence: "Monthly",
     scope: "National",
+    slug: "ypp",
+    iconKey: "graduationCap",
+    purposeFull: "Represents the interests of API members under 35 and guides the design of professional development, networking, and mentorship programs for early-career valuers and property advisers. Meets monthly.",
+    staffLead: { name: "Ella", title: "Manager, Young Professionals & Research Programs" },
+    members: [
+      { name: "Zara Okonjo", grade: "AAPI", state: "NSW", role: "Chair" },
+      { name: "Tom Reilly", grade: "AAPI", state: "VIC", role: "Deputy Chair" },
+      { name: "Ishan Mehta", grade: "AAPI", state: "QLD", role: "Member" },
+      { name: "Amelia Foster", grade: "AAPI", state: "WA", role: "Member" },
+      { name: "Benjamin Zhao", grade: "AAPI", state: "SA", role: "Member" },
+      { name: "Chloe Donnelly", grade: "AAPI", state: "TAS", role: "Member" },
+    ],
   },
 ];
 
