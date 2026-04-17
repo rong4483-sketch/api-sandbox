@@ -32,16 +32,16 @@ export default function CpdPublicBrowsePage() {
         description="Browse upcoming CPD-endorsed learning. Anyone can view the catalogue — booking a seat requires member sign-in via iMIS."
       />
 
-      <div className="mb-6 rounded-lg border border-accent-500/40 bg-accent-500/5 p-4 flex items-start gap-3">
+      <div className="mb-6 rounded-2xl border border-accent-500/40 bg-accent-500/5 p-4 flex items-start gap-3">
         <Lock className="w-4 h-4 text-accent-700 mt-0.5 shrink-0" />
-        <div className="text-sm text-ink/80">
-          <span className="font-bold text-accent-700">Authentication required for booking.</span> Browsing is public; completing a booking signs you in through the iMIS member database.
+        <div className="text-sm text-ink/85">
+          <span className="font-semibold text-accent-700">Authentication required for booking.</span> Browsing is public; completing a booking signs you in through the iMIS member database.
         </div>
       </div>
 
-      <div className="mb-6 flex flex-col md:flex-row gap-3 md:items-center">
+      <div className="sticky top-[72px] z-20 -mx-6 px-6 md:-mx-8 md:px-8 py-4 bg-white/95 backdrop-blur-md border-b border-border mb-6 flex flex-col md:flex-row gap-3 md:items-center">
         <div className="relative flex-1">
-          <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[color:var(--color-muted)]" />
+          <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted" />
           <Input
             placeholder="Search by title or presenter…"
             value={query}
@@ -49,13 +49,15 @@ export default function CpdPublicBrowsePage() {
             className="pl-9"
           />
         </div>
-        <div className="flex gap-1 flex-wrap">
+        <div className="flex gap-1.5 flex-wrap">
           {formats.map((f) => (
             <button
               key={f}
               onClick={() => setFormat(f)}
-              className={`px-3 py-1.5 rounded-lg text-sm font-medium transition-colors duration-150 ${
-                format === f ? "bg-brand-500 text-white" : "bg-white border border-border text-ink/70 hover:border-brand-500"
+              className={`px-3 py-1.5 rounded-lg text-sm font-medium transition-colors duration-200 ${
+                format === f
+                  ? "bg-brand-500 text-white"
+                  : "bg-white border border-border text-ink/70 hover:border-brand-500 hover:text-brand-500"
               }`}
             >
               {f}
@@ -66,46 +68,46 @@ export default function CpdPublicBrowsePage() {
 
       <div className="mb-3 text-sm text-[color:var(--color-muted)]">{filtered.length} of {cpdEvents.length} events</div>
 
-      <div className="overflow-hidden rounded-lg border border-border bg-white">
+      <div className="overflow-hidden rounded-2xl border border-border bg-white">
         <table className="w-full text-sm">
-          <thead className="bg-surface text-xs uppercase tracking-wider text-[color:var(--color-muted)]">
+          <thead className="bg-surface-alt text-xs uppercase tracking-wider text-muted">
             <tr>
-              <th className="text-left font-bold px-5 py-3">Event</th>
-              <th className="text-left font-bold px-5 py-3">Date</th>
-              <th className="text-left font-bold px-5 py-3">Format</th>
-              <th className="text-left font-bold px-5 py-3">Hours</th>
-              <th className="text-right font-bold px-5 py-3">Price (Member)</th>
-              <th className="text-right font-bold px-5 py-3">Seats</th>
+              <th className="text-left font-semibold px-5 py-3">Event</th>
+              <th className="text-left font-semibold px-5 py-3">Date</th>
+              <th className="text-left font-semibold px-5 py-3">Format</th>
+              <th className="text-left font-semibold px-5 py-3">Hours</th>
+              <th className="text-right font-semibold px-5 py-3">Price (Member)</th>
+              <th className="text-right font-semibold px-5 py-3">Seats</th>
               <th className="px-5 py-3"></th>
             </tr>
           </thead>
           <tbody className="divide-y divide-border align-top">
             {filtered.map((e) => (
-              <tr key={e.id} className="hover:bg-surface/60 transition-colors duration-150">
+              <tr key={e.id} className="hover:bg-surface transition-colors duration-150">
                 <td className="px-5 py-4">
                   <Link href={`/education/cpd/${e.id}`} className="font-medium text-ink hover:text-brand-500 no-underline hover:no-underline">
                     {e.title}
                   </Link>
-                  <div className="text-xs text-[color:var(--color-muted)] mt-0.5">{e.presenter}</div>
+                  <div className="text-xs text-muted mt-0.5">{e.presenter}</div>
                 </td>
                 <td className="px-5 py-4 whitespace-nowrap">
-                  <div className="flex items-center gap-1.5 text-ink/75"><Calendar className="w-3.5 h-3.5" />{new Date(e.date).toLocaleDateString("en-AU", { day: "numeric", month: "short", year: "numeric" })}</div>
-                  <div className="text-xs text-[color:var(--color-muted)] mt-0.5 flex items-center gap-1"><MapPin className="w-3 h-3" />{e.state}</div>
+                  <div className="flex items-center gap-1.5 text-ink/80"><Calendar className="w-3.5 h-3.5" />{new Date(e.date).toLocaleDateString("en-AU", { day: "numeric", month: "short", year: "numeric" })}</div>
+                  <div className="text-xs text-muted mt-0.5 flex items-center gap-1"><MapPin className="w-3 h-3" />{e.state}</div>
                 </td>
                 <td className="px-5 py-4"><Badge variant="muted">{e.format}</Badge></td>
                 <td className="px-5 py-4">
-                  <div className="flex items-center gap-1 text-ink/75"><Clock className="w-3.5 h-3.5" />{e.hours}h</div>
-                  <div className="text-xs text-[color:var(--color-muted)]">{e.type}</div>
+                  <div className="flex items-center gap-1 text-ink/80"><Clock className="w-3.5 h-3.5" />{e.hours}h</div>
+                  <div className="text-xs text-muted">{e.type}</div>
                 </td>
                 <td className="px-5 py-4 text-right whitespace-nowrap">
-                  <div className="font-bold text-brand-500">{e.memberPrice === 0 ? "Free" : `$${e.memberPrice}`}</div>
-                  <div className="text-xs text-[color:var(--color-muted)] line-through">${e.price}</div>
+                  <div className="font-semibold text-brand-500 tabular-nums">{e.memberPrice === 0 ? "Free" : `$${e.memberPrice}`}</div>
+                  <div className="text-xs text-muted-soft line-through tabular-nums">${e.price}</div>
                 </td>
-                <td className="px-5 py-4 text-right text-sm text-ink/70">
+                <td className="px-5 py-4 text-right text-sm text-ink/70 tabular-nums">
                   {e.seatsLeft}/{e.seats}
                 </td>
                 <td className="px-5 py-4 text-right">
-                  <Button asChild size="sm">
+                  <Button asChild size="sm" variant={e.memberPrice > 0 ? "accent" : "default"}>
                     <Link href={`/education/cpd/${e.id}`} className="no-underline hover:no-underline whitespace-nowrap">
                       <Lock className="w-3.5 h-3.5" /> Book
                     </Link>
