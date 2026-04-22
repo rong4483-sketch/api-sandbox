@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import * as DialogPrimitive from "@radix-ui/react-dialog";
-import { Sparkles, X, ExternalLink } from "lucide-react";
+import { Sparkles, X, ExternalLink, Maximize2, Minimize2 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
 
@@ -18,6 +18,7 @@ const suggestedPrompts = [
 export function MemberConcierge() {
   const [open, setOpen] = React.useState(false);
   const [iframeFailed, setIframeFailed] = React.useState(false);
+  const [maximized, setMaximized] = React.useState(false);
 
   return (
     <DialogPrimitive.Root open={open} onOpenChange={setOpen}>
@@ -54,7 +55,12 @@ export function MemberConcierge() {
                   animate={{ opacity: 1, x: 0 }}
                   exit={{ opacity: 0, x: 400 }}
                   transition={{ type: "tween", duration: 0.25 }}
-                  className="fixed right-0 top-0 z-50 h-full w-full sm:max-w-md bg-white shadow-2xl flex flex-col"
+                  className={cn(
+                    "fixed z-50 bg-white shadow-2xl flex flex-col",
+                    maximized
+                      ? "inset-0 sm:inset-[5vh_5vw] sm:rounded-2xl overflow-hidden"
+                      : "right-0 top-0 h-full w-full sm:max-w-md"
+                  )}
                 >
                   {/* Header */}
                   <div className="h-20 px-5 flex items-center justify-between border-b border-border bg-brand-500 text-white">
@@ -65,9 +71,19 @@ export function MemberConcierge() {
                         <div className="text-xs text-white/75">AI assistant for standards, CPD, and guidance</div>
                       </div>
                     </div>
-                    <DialogPrimitive.Close className="p-2 hover:bg-white/10 rounded-lg">
-                      <X className="w-5 h-5" />
-                    </DialogPrimitive.Close>
+                    <div className="flex items-center gap-1">
+                      <button
+                        type="button"
+                        onClick={() => setMaximized((m) => !m)}
+                        aria-label={maximized ? "Restore" : "Maximize"}
+                        className="hidden sm:inline-flex p-2 hover:bg-white/10 rounded-lg"
+                      >
+                        {maximized ? <Minimize2 className="w-5 h-5" /> : <Maximize2 className="w-5 h-5" />}
+                      </button>
+                      <DialogPrimitive.Close className="p-2 hover:bg-white/10 rounded-lg">
+                        <X className="w-5 h-5" />
+                      </DialogPrimitive.Close>
+                    </div>
                   </div>
 
                   {/* Iframe / fallback */}
