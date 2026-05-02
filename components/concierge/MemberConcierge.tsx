@@ -6,7 +6,7 @@ import { Sparkles, X, ExternalLink, Maximize2, Minimize2 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
 
-const CHATBOT_URL = "https://api-chatbot.pages.dev/";
+const CHATBOT_URL = "https://api-chatbot-demo.pages.dev/";
 
 const suggestedPrompts = [
   "Find specific CPV CPD rules",
